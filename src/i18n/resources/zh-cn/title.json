@@ -1,0 +1,23 @@
+{
+  "app": "应用",
+  "dashboard": "仪表盘",
+  "login": "登录",
+  "register": "注册",
+  "forgot-password": "忘记密码",
+  "knowledge": "使用文档",
+  "subscription": "订阅",
+  "buy-plan": "购买订阅",
+  "not_found": "404 页面未找到",
+  "server_error": "服务器错误",
+  "checkout": "收银台",
+  "node-status": "节点状态",
+  "order-list": "订单列表",
+  "user": "用户",
+  "invitation": "推广管理",
+  "invite": "邀请用户",
+  "invite-commissions": "佣金记录",
+  "profile": "个人资料",
+  "service": "服务",
+  "ticket": "我的工单",
+  "traffic": "流量统计"
+}

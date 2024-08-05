@@ -1,0 +1,23 @@
+{
+  "app": "應用",
+  "dashboard": "儀錶盤",
+  "login": "登入",
+  "register": "註冊",
+  "forgot-password": "忘記密碼",
+  "knowledge": "使用文檔",
+  "subscription": "訂閱",
+  "buy-plan": "購買訂閱",
+  "not_found": "404 頁面未找到",
+  "server_error": "服務器錯誤",
+  "checkout": "收銀臺",
+  "node-status": "節點狀態",
+  "order-list": "訂單列錶",
+  "user": "用戶",
+  "invitation": "推廣管理",
+  "invite": "邀請用戶",
+  "invite-commissions": "傭金記錄",
+  "profile": "個人資料",
+  "service": "服務",
+  "ticket": "我的工單",
+  "traffic": "流量統計"
+}

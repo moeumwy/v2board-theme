@@ -1,0 +1,23 @@
+{
+  "app": "App",
+  "dashboard": "Dashboard",
+  "login": "Login",
+  "register": "Register",
+  "forgot-password": "Forgot Password",
+  "knowledge": "Knowledge",
+  "subscription": "Subscription",
+  "buy-plan": "Buy Plan",
+  "not_found": "404 Not Found",
+  "server_error": "Server Error",
+  "checkout": "Checkout",
+  "node-status": "Node Status",
+  "order-list": "My Orders",
+  "user": "User",
+  "invitation": "Promotion",
+  "invite": "Invite",
+  "invite-commissions": "Commissions Log",
+  "profile": "Profile",
+  "service": "Service",
+  "ticket": "My Tickets",
+  "traffic": "Traffic"
+}

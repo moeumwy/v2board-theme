@@ -1,0 +1,609 @@
+{
+  "layout": {
+    "header": {
+      "profile": {
+        "user_secondary": "高級客戶",
+        "profile_center": "個人中心",
+        "transaction_list": "訂單列錶",
+        "traffic_statistics": "流量統計",
+        "invitations": "我的邀請",
+        "logout": "退出登入",
+        "logout_tooltip": "登出"
+      },
+      "ticket": {
+        "title": "工單",
+        "no_ticket": "暫無未完成的工單",
+        "view_all": "檢視全部",
+        "start_at": "創建於 {{time}}",
+        "updated_at_seconds": "更新於 {{count}} 秒前",
+        "updated_at_minutes": "更新於 {{count}} 分鐘前",
+        "updated_at_hours": "更新於 {{count}} 小時前",
+        "updated_at_days": "更新於 {{count}} 天前",
+        "reply_status_replied": "已回復",
+        "reply_status_noreply": "待回復",
+        "refresh_tooltip": "刷新"
+      },
+      "dark-mode-switch": {
+        "title": "切換色彩模式",
+        "follow-system": "跟隨繫統",
+        "follow-times": "跟隨時間",
+        "always-light": "始終亮色",
+        "always-dark": "始終暗色"
+      },
+      "i18n-switch": {
+        "title": "切換語言"
+      }
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>萌物云</0> 版權所有",
+      "contact-us": "聯繫我們",
+      "privacy-policy": "隱私政策",
+      "terms-of-service": "服務條款"
+    }
+  },
+  "login": {
+    "title": "登入",
+    "email": "信箱",
+    "email_placeholder": "請輸入信箱",
+    "email_required": "您必須輸入信箱",
+    "email_invalid": "您輸入的信箱無效",
+    "password": "密碼",
+    "password_placeholder": "請輸入密碼",
+    "password_required": "您必須輸入密碼",
+    "submit": "登入",
+    "go-register": "沒有賬戶？註冊一個",
+    "forgot_password": "忘記密碼？"
+  },
+  "register": {
+    "title": "註冊",
+    "email": "信箱",
+    "email_placeholder": "請輸入信箱",
+    "email_required": "您必須輸入信箱",
+    "email_invalid": "您輸入的信箱無效",
+    "email_max": "信箱長度不能超過 {{count}} 個字符",
+    "email_code": "信箱驗證碼",
+    "email_code_placeholder": "請輸入信箱驗證碼",
+    "email_code_required": "您必須輸入信箱驗證碼",
+    "send_email_code": "驗證",
+    "password": "密碼",
+    "password_placeholder": "請輸入密碼",
+    "password_required": "您必須輸入密碼",
+    "password_min": "密碼長度不能少於 {{count}} 個字符",
+    "password_max": "密碼長度不能超過 {{count}} 個字符",
+    "password_confirmation": "確認密碼",
+    "password_confirmation_placeholder": "請再次輸入密碼",
+    "password_confirmation_required": "您必須再次輸入密碼",
+    "password_confirmation_invalid": "您兩次輸入的密碼不一致",
+    "password_strength": "密碼強度",
+    "password_strength_poor": "弱",
+    "password_strength_weak": "中",
+    "password_strength_normal": "正常",
+    "password_strength_good": "好",
+    "password_strength_strong": "強",
+    "password_confirm": "確認密碼",
+    "password_confirm_invalid": "您兩次輸入的密碼不一致",
+    "password_confirm_required": "您必須再次輸入密碼",
+    "go-login": "已有賬戶？登入",
+    "license_agree": "您確保已經完整閱讀併同意我們的 <0>服務協議</0> 和 <1>隱私政策</1>",
+    "agree_required": "您必須同意服務協議和隱私政策",
+    "invite_code": "邀請碼",
+    "invite_code_max": "邀請碼長度不能超過 {{count}} 個字符",
+    "invite_code_placeholder_optional": "請輸入邀請碼，如果沒有請留空",
+    "invite_code_placeholder_required": "請輸入邀請碼",
+    "submit": "註冊"
+  },
+  "forgot_password": {
+    "title": "忘記密碼",
+    "back_to_login": "返回登入",
+    "email": "信箱",
+    "email_placeholder": "請輸入信箱",
+    "email_required": "您必須輸入信箱",
+    "email_invalid": "您輸入的信箱無效",
+    "email_code": "信箱驗證碼",
+    "email_code_placeholder": "請輸入信箱驗證碼",
+    "email_code_required": "您必須輸入信箱驗證碼",
+    "email_code_min": "信箱驗證碼長度不能少於 {{count}} 個字符",
+    "email_code_max": "信箱驗證碼長度不能超過 {{count}} 個字符",
+    "send_email_code": "驗證",
+    "password": "密碼",
+    "password_placeholder": "請輸入密碼",
+    "password_required": "您必須輸入密碼",
+    "password_min": "密碼長度不能少於 {{count}} 個字符",
+    "password_max": "密碼長度不能超過 {{count}} 個字符",
+    "password_confirmation": "確認密碼",
+    "password_confirmation_placeholder": "請再次輸入密碼",
+    "password_confirmation_required": "您必須再次輸入密碼",
+    "password_confirmation_invalid": "您兩次輸入的密碼不一致",
+    "password_strength": "密碼強度",
+    "password_strength_poor": "弱",
+    "password_strength_weak": "中",
+    "password_strength_normal": "正常",
+    "password_strength_good": "好",
+    "password_strength_strong": "強",
+    "password_confirm": "確認密碼",
+    "password_confirm_invalid": "您兩次輸入的密碼不一致",
+    "password_confirm_required": "您必須再次輸入密碼",
+    "submit": "重置密碼"
+  },
+  "auth": {
+    "captcha": {
+      "title": "人機驗證",
+      "description": "請完成下面的驗證",
+      "submit": "提交",
+      "success": "郵件已發送，請註意查收",
+      "error": "驗證失敗，請重試",
+      "error_null_token": "出現錯誤，Token 為空，請重試"
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>萌物云</0> 版權所有",
+      "links": {
+        "terms": "服務協議",
+        "privacy": "隱私政策"
+      }
+    }
+  },
+  "dashboard": {
+    "announcement": {
+      "chip": "公告",
+      "title": "公告"
+    },
+    "subscription-card": {
+      "title": "訂閱",
+      "description": "您的訂閱信息",
+      "plan": "計劃",
+      "expire_forever": "此訂閱長期有效",
+      "expire_limited_zero": "此訂閱已或即將到期，請及時續費",
+      "expire_limited_other": "於 {{date}} 到期，距離到期還有 {{count}} 天，將於 {{reset_date}} 天後重置流量",
+      "traffic": "已用流量 {{used}} GB / 總計流量 {{total}} GB",
+      "no-subscription": "您還沒有訂閱"
+    },
+    "shortcut": {
+      "title": "捷徑",
+      "description": "您的常用操作",
+      "tutorial": {
+        "primary": "使用教程",
+        "secondary": "檢視使用教程以了解如何使用本站服務"
+      },
+      "subscribe": {
+        "primary": "一鍵訂閱",
+        "secondary": "快速將節點導入對應客戶端進行使用",
+        "copy": "復制訂閱鏈接",
+        "scan": "掃描二維碼",
+        "scan_tips": "使用支援掃碼的客戶端進行訂閱",
+        "clash": "導入至 Clash",
+        "clashx": "導入至 ClashX",
+        "surfboard": "導入至 Surfboard",
+        "shadowrocket": "導入至 Shadowrocket",
+        "quantumultx": "導入至 Quantumult X",
+        "surge": "導入至 Surge",
+        "stash": "導入至 Stash",
+        "buy-button": "購買"
+      },
+      "purchase": {
+        "primary_purchased": "續費訂閱",
+        "secondary_purchased": "續費訂閱以繼續使用服務",
+        "primary_not_purchased": "購買訂閱",
+        "secondary_not_purchased": "購買訂閱以使用服務"
+      },
+      "ticket": {
+        "primary": "提交工單",
+        "secondary": "遇到問題？提交工單尋求幫助"
+      }
+    },
+    "alert": {
+      "pending-order": "您有 {{count}} 筆待支付訂單，請及時支付。",
+      "pending-order-action": "檢視訂單"
+    }
+  },
+  "maintenance": {
+    "404": {
+      "title": "頁面未找到",
+      "description": "您訪問的頁面不存在或已被刪除",
+      "button": "返回首頁"
+    }
+  },
+  "knowledge": {
+    "title": "常見問題",
+    "description": "您可能會遇到的問題",
+    "search": "搜索問題",
+    "search_placeholder": "輸入關鍵詞搜索",
+    "post": {
+      "update": "更新於 {{date}}"
+    }
+  },
+  "subscription": {
+    "buy": {
+      "filter-card": {
+        "title": "篩選",
+        "plan-type": {
+          "title": "計劃類型",
+          "all": "全部",
+          "period": "按周期",
+          "traffic": "按流量"
+        },
+        "payment-type": {
+          "title": "支付周期",
+          "onetime_price": "免洗",
+          "month_price": "月付",
+          "quarter_price": "季付",
+          "half_year_price": "半年付",
+          "year_price": "年付",
+          "two_year_price": "兩年付",
+          "three_year_price": "三年付"
+        }
+      },
+      "products-header": {
+        "search": "搜索節點",
+        "filter-button": "篩選"
+      },
+      "product-card": {
+        "price-mode_onetime_price": "免洗",
+        "price-mode_month_price": "月付",
+        "price-mode_quarter_price": "季付",
+        "price-mode_half_year_price": "半年付",
+        "price-mode_year_price": "年付",
+        "price-mode_two_year_price": "兩年付",
+        "price-mode_three_year_price": "三年付",
+        "buy-button": "購買"
+      }
+    },
+    "plan": {
+      "plan-info-card": {
+        "title": "購買訂閱：{{name}}"
+      },
+      "period-select-card": {
+        "title": "付款周期",
+        "price": "￥ {{price}}",
+        "period_onetime_price": "免洗付款",
+        "period_month_price": "每月付款",
+        "period_quarter_price": "每季付款",
+        "period_half_year_price": "每半年付款",
+        "period_year_price": "每年付款",
+        "period_two_year_price": "每兩年付款",
+        "period_three_year_price": "每三年付款"
+      },
+      "coupon-card": {
+        "title": "優惠券",
+        "placeholder": "輸入優惠券碼，若無可不填",
+        "tooltip_add": "使用優惠券",
+        "tooltip_reset": "重置優惠券"
+      },
+      "order-info-card": {
+        "title": "訂單信息",
+        "price": "￥ {{price}}",
+        "coupon": "優惠券：{{name}}",
+        "total": "總計",
+        "button": "創建訂單"
+      }
+    }
+  },
+  "order": {
+    "checkout": {
+      "product-info-card": {
+        "title": "產品信息",
+        "product-name": "產品名稱",
+        "product-type": "訂單類型",
+        "product-period": "undefined",
+        "product-period_onetime_price": "免洗付款",
+        "product-period_month_price": "每月付款",
+        "product-period_quarter_price": "每季付款",
+        "product-period_half_year_price": "每半年付款",
+        "product-period_year_price": "每年付款",
+        "product-period_two_year_price": "每兩年付款",
+        "product-period_three_year_price": "每三年付款",
+        "traffic": "流量",
+        "traffic_limited": "{{count}} GB",
+        "traffic_unlimited": "不限",
+        "product-price": "價格",
+        "next-billing-date": "下次續費"
+      },
+      "status-card": {
+        "status_pending": "待支付",
+        "status_paid": "已支付",
+        "status_cancelled": "已取消",
+        "status_finished": "已完成",
+        "description_pending": "您的訂單已創建，但尚未支付。請盡快支付以免訂單過期。",
+        "description_paid": "您的訂單已支付成功，請您等候服務分配。",
+        "description_cancelled": "您的訂單已被取消，您可以在下方檢視訂單信息。",
+        "description_finished": "您的訂單已完成，您可以在下方檢視訂單信息。"
+      },
+      "order-info-card": {
+        "title": "訂單信息",
+        "order-number": "訂單號",
+        "order-date": "訂單日期",
+        "order-status": "訂單狀態",
+        "order-status-value_pending": "待支付",
+        "order-status-value_paid": "已支付",
+        "order-status-value_cancelled": "已取消",
+        "order-amount": "訂單金額",
+        "price": "{{value}} CNY",
+        "coupon-amount": "優惠金額",
+        "subscription-deduct-amount": "舊訂閱抵扣",
+        "cancel-tooltip": "取消訂單",
+        "cancel-dialog": {
+          "title": "註意",
+          "content": "如果您已經付款，取消訂單可能會導致支付失敗，確定要取消訂單嗎？",
+          "cancel-button": "取消",
+          "confirm-button": "確定"
+        }
+      },
+      "payment-method-card": {
+        "title": "支付方式"
+      },
+      "billing-card": {
+        "title": "賬單信息",
+        "price": "{{value}}",
+        "deduction": "抵扣",
+        "surplus": "余額",
+        "button": "支付",
+        "total-price": "總計"
+      }
+    },
+    "list": {
+      "table": {
+        "trade_no_header": "訂單號",
+        "trade_no_description": "訂單號是訂單的唯一ID，您可以通過訂單號查詢訂單信息。",
+        "plan_name_header": "產品名稱",
+        "plan_name_description": "產品名稱是您購買的產品的名稱。",
+        "total_amount_header": "訂單金額",
+        "total_amount_description": "訂單金額是您購買的產品的總價。",
+        "status_header": "訂單狀態",
+        "status_description": "訂單狀態是訂單的當前狀態。",
+        "status-value_pending": "待支付",
+        "status-value_paid": "已支付",
+        "status-value_cancelled": "已取消",
+        "status-value_finished": "已完成",
+        "period_header": "服務周期",
+        "period_description": "服務周期是您服務的有效期。",
+        "period-value": "undefined",
+        "period-value_onetime_price": "免洗付款",
+        "period-value_month_price": "月付",
+        "period-value_quarter_price": "季付",
+        "period-value_half_year_price": "半年付",
+        "period-value_year_price": "年付",
+        "period-value_two_year_price": "兩年付",
+        "period-value_three_year_price": "三年付",
+        "created_at_header": "創建時間",
+        "created_at_description": "創建時間是訂單在繫統中生成的時間。",
+        "action_header": "操作",
+        "action-view": "檢視詳情",
+        "action-cancel": "取消訂單"
+      }
+    }
+  },
+  "node": {
+    "status": {
+      "table": {
+        "id_header": "節點 ID",
+        "id_description": "節點 ID 是節點的唯一標識。出現錯誤時，請嚮客服提供節點 ID。",
+        "name_header": "節點名稱",
+        "name_description": "節點名稱是您的節點的名稱。",
+        "status_header": "狀態",
+        "status_description": "狀態錶示節點的當前狀態，節點每 5 分鐘回響一次，如果最近一次回響大於 5 分鐘就會返回下線狀態。",
+        "type_header": "協議類型",
+        "type_description": "協議類型錶示節點支援的協議類型。",
+        "rate_header": "倍率",
+        "rate_description": "倍率錶示節點的流量倍率。如倍率為 2x，則計費的流量為實際流量的 2 倍。",
+        "tags_header": "標簽",
+        "tags_description": ""
+      }
+    }
+  },
+  "invite": {
+    "my-invite": {
+      "invitation-card": {
+        "title": "我的邀請",
+        "currency": "CNY",
+        "description": "當前剩余傭金",
+        "helperText": "邀請好友註冊，您將獲得邀請獎勵，好友也將獲得註冊獎勵。",
+        "transfer-button": "劃轉",
+        "transfer-dialog": {
+          "title": "推廣傭金劃轉至余額",
+          "info": "劃轉後的余額僅用於{{siteName}}消費使用",
+          "total-amount_label": "當前推廣傭金余額",
+          "transfer-amount_label": "劃轉金額",
+          "cancel-button": "取消",
+          "confirm-button": "確定",
+          "validation_min": "最小提現金額為 {{count}} CNY",
+          "validation_max": "最大提現金額為 {{count}} CNY",
+          "validation_required": "請輸入提現金額"
+        },
+        "withdraw-button": "提現",
+        "withdraw-dialog": {
+          "title": "推廣傭金提現",
+          "info": "{{amount}} CNY 可提現，提現後將從推廣傭金中扣除",
+          "withdraw-account_label": "提現賬戶",
+          "withdraw-method_label": "提現方式",
+          "withdraw-amount_label": "提現金額",
+          "cancel-button": "取消",
+          "confirm-button": "確定",
+          "validation_required": "請輸入{{name}}"
+        }
+      },
+      "info-card": {
+        "title": "推廣統計",
+        "user-register-count": "用戶註冊數",
+        "user-register-count-value": "{{count}} 人",
+        "commission-rate": "傭金比例",
+        "commission-rate-value": "{{rate}} %",
+        "commission-confirming": "待確認傭金",
+        "commission-confirming-value": "{{count}} CNY",
+        "commission-total": "纍計傭金",
+        "commission-total-value": "{{count}} CNY"
+      },
+      "invite-codes-table": {
+        "title": "我的邀請碼",
+        "generate_tooltip": "生成邀請碼",
+        "id_header": "ID",
+        "code_header": "邀請碼",
+        "code_description": "邀請碼是您的邀請鏈接的重要一部分。",
+        "created_at_header": "創建時間",
+        "created_at_description": "創建時間是邀請碼在繫統中生成的時間。",
+        "actions_header": "操作",
+        "action-copy": "復制",
+        "action-delete": "刪除"
+      }
+    },
+    "commissions": {
+      "id_header": "ID",
+      "order-amount_header": "訂單金額",
+      "order-amount_description": "訂單金額是用戶購買商品時的訂單金額。",
+      "get-amount_header": "獲得傭金",
+      "get-amount_description": "獲得傭金是用戶購買商品後妳獲得的傭金。",
+      "created-at_header": "創建時間",
+      "created-at_description": "創建時間是傭金在繫統中生成的時間。",
+      "amount-value": "{{value}} CNY"
+    }
+  },
+  "profile": {
+    "account-info-card": {
+      "title": "賬戶信息",
+      "table": {
+        "email_key": "信箱",
+        "email_value": "{{email}}",
+        "plan_id_key": "套餐 ID",
+        "plan_id_value": "{{count}}",
+        "plan_id_value_zero": "無",
+        "plan_expired_at_key": "訂閱過期時間",
+        "plan_expired_at_value": "{{date}}",
+        "created_at_key": "創建時間",
+        "created_at_value": "{{date}}"
+      }
+    },
+    "wallet-card": {
+      "title": "我的資產",
+      "table": {
+        "balance_key": "余額",
+        "balance_value": "{{value}} CNY",
+        "commission_balance_key": "推廣傭金",
+        "commission_balance_value": "{{value}} CNY"
+      }
+    },
+    "change-password-card": {
+      "title": "修改密碼",
+      "form": {
+        "old_password_label": "舊密碼",
+        "old_password_required": "請輸入舊密碼",
+        "new_password_label": "新密碼",
+        "new_password_required": "請輸入新密碼",
+        "new_password_min": "新密碼長度不能少於 {{count}} 位",
+        "confirm_password_label": "確認密碼",
+        "confirm_password_required": "請輸入確認密碼",
+        "confirm_password_not_match": "兩次輸入的密碼不一致",
+        "submit-button": "提交",
+        "reset-button": "重置"
+      }
+    },
+    "notification-card": {
+      "title": "通知設定",
+      "expired_notify_label": "訂閱過期提醒",
+      "traffic_notify_label": "流量用量提醒",
+      "save-button": "保存"
+    },
+    "telegram-card": {
+      "title": "Telegram 通知",
+      "description": "綁定 Telegram 賬號後，您可以在 Telegram 上接收到訂閱過期提醒、流量用量提醒等通知。",
+      "bind-button": "綁定",
+      "unbind-button": "解綁",
+      "unbind-confirm": "您確定要解綁 Telegram 賬號嗎？",
+      "add_bot": "添加機器人",
+      "add_bot_content": "請下載 Telegram 併點選鏈接添加機器人：<0>https://t.me/{{name}}<0>",
+      "send_command_label": "發送命令",
+      "send_command_content": "請在 Telegram 中嚮機器人發送命令 {{command}} 綁定賬號。",
+      "add_to_group_label": "加入 Telegram 群組",
+      "add_to_group_content": "加入 Telegram 群組以獲得更多幫助：<0>{{link}}</0>",
+      "next_step": "下一步",
+      "previous_step": "上一步"
+    },
+    "reset-subscription-card": {
+      "title": "重置訂閱",
+      "alert": "當妳的訂閱地址或賬戶發生泄漏被他人濫用時，可以在此重置訂閱信息。避免帶來不必要的損失。",
+      "button": "重置訂閱",
+      "dialog": {
+        "title": "確定要重置訂閱信息？",
+        "content": "如果您的訂閱地址或信息發生泄露可以執行此操作。重置後您的 UUID 及訂閱將會變更，需要重新導入訂閱。",
+        "cancel": "取消",
+        "confirm": "確定"
+      }
+    }
+  },
+  "ticket": {
+    "drawer": {
+      "title": "工單",
+      "new-ticket": "新建工單",
+      "updated_at_just_now": "剛剛",
+      "updated_at": "更新於 {{date}}",
+      "updated_at_minute": "更新於 {{count}} 分鐘前",
+      "updated_at_hour": "更新於 {{count}} 小時前",
+      "updated_at_day": "更新於 {{count}} 天前",
+      "updated_at_month": "更新於 {{count}} 月前",
+      "updated_at_year": "更新於 {{count}} 年前",
+      "reply_status_replied": "已回復",
+      "reply_status_pending": "待回復",
+      "reply_status_closed": "已關閉",
+      "search_placeholder": "搜索工單",
+      "create_dialog": {
+        "title": "新建工單",
+        "subject_label": "主題",
+        "subject_required": "請輸入主題",
+        "message_label": "內容",
+        "message_required": "請輸入內容",
+        "level_label": "優先級",
+        "level_required": "請選擇優先級",
+        "level_0": "低",
+        "level_1": "中",
+        "level_2": "高",
+        "cancel_button": "取消",
+        "submit_button": "提交"
+      }
+    },
+    "header": {
+      "title": "工單 {{id}}：{{subject}}",
+      "ticket_level_low": "優先級：低",
+      "ticket_level_medium": "優先級：中",
+      "ticket_level_high": "優先級：高",
+      "close_dialog": {
+        "title": "關閉工單",
+        "content": "您確定要關閉工單嗎？關閉工單後無法繼續打開，當然您可以通過創建新的工單來繼續您的咨詢。",
+        "cancel-button": "取消",
+        "confirm-button": "確定"
+      }
+    },
+    "conversation": {
+      "none_selected": "暫無工單"
+    },
+    "input-area": {
+      "input_placeholder": "輸入回復內容",
+      "submit-button": "提交"
+    }
+  },
+  "traffic": {
+    "alert": "流量明細僅保留近一個月數據以供查詢。此數據不保證 100% 准確性，僅供參考。",
+    "table": {
+      "record_at_header": "記錄時間",
+      "record_at_description": "繫統每晚 00:00 會從各節點獲取流量數據併記錄。",
+      "upload_header": "上載流量",
+      "upload_description": "使用節點上載至遠端服務器的流量。",
+      "download_header": "下載流量",
+      "download_description": "使用節點從遠端服務器下載的流量。",
+      "server_rate_header": "節點倍率",
+      "server_rate_description": "節點的倍率，計費流量 = 實際流量 x 倍率。",
+      "total_header": "總計",
+      "total_description": "當前項的總計流量，可能與實際流量不一致，用於計費。"
+    },
+    "chart": {
+      "title": "流量統計",
+      "upload_name": "上載",
+      "download_name": "下載",
+      "total_name": "總計"
+    },
+    "info-card": {
+      "title": "流量信息",
+      "sum_upload_label": "本月上載",
+      "sum_download_label": "本月下載",
+      "sum_total_label": "計費流量",
+      "day_num_label": "本月數據",
+      "average_total_label": "日平均流量"
+    }
+  }
+}

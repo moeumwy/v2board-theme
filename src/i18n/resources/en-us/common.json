@@ -1,0 +1,606 @@
+{
+  "layout": {
+    "header": {
+      "profile": {
+        "user_secondary": "Premium Customer",
+        "profile_center": "User Profile",
+        "transaction_list": "Transactions",
+        "traffic_statistics": "Traffic Stat",
+        "invitations": "My Invitations",
+        "logout": "Logout",
+        "logout_tooltip": "Logout"
+      },
+      "ticket": {
+        "title": "Ticket",
+        "no_ticket": "No Ticket",
+        "view_all": "View All",
+        "start_at": "Start at {{time}}",
+        "updated_at_seconds": "Updated {{count}} seconds ago",
+        "updated_at_minutes": "Updated {{count}} minutes ago",
+        "updated_at_hours": "Updated {{count}} hours ago",
+        "updated_at_days": "Updated {{count}} days ago",
+        "reply_status_replied": "Replied",
+        "reply_status_noreply": "Handling",
+        "refresh_tooltip": "Refresh"
+      },
+      "dark-mode-switch": {
+        "title": "Light / Dark Mode",
+        "follow-system": "Follow System",
+        "follow-times": "Follow Times",
+        "always-light": "Always Light",
+        "always-dark": "Always Dark"
+      },
+      "i18n-switch": {
+        "title": "Languages"
+      }
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>MENGWU</0> All Rights Reserved",
+      "contact-us": "Contact Us",
+      "privacy-policy": "Privacy",
+      "terms-of-service": "Terms"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "email_placeholder": "Please enter your email",
+    "email_required": "Email is required",
+    "email_invalid": "Email is invalid",
+    "password": "Password",
+    "password_placeholder": "Please enter your password",
+    "password_required": "Password is required",
+    "submit": "Login",
+    "go-register": "Don't have an account?",
+    "forgot_password": "Forgot Password?"
+  },
+  "register": {
+    "title": "Register",
+    "email": "Email",
+    "email_placeholder": "Please enter your email",
+    "email_required": "Email is required",
+    "email_invalid": "Email is invalid",
+    "email_max": "Email cannot be longer than {{count}} characters",
+    "email_code": "Verification Code",
+    "email_code_placeholder": "Please enter your verification code",
+    "email_code_required": "Verification code is required",
+    "send_email_code": "Send",
+    "password": "Password",
+    "password_placeholder": "Please enter your password",
+    "password_required": "Password is required",
+    "password_min": "Password must be at least {{count}} characters",
+    "password_max": "Password cannot be longer than {{count}} characters",
+    "password_confirmation": "Password Confirm",
+    "password_confirmation_placeholder": "Please enter your password again",
+    "password_confirmation_required": "Password confirm is required",
+    "password_confirmation_invalid": "Password confirm is invalid",
+    "password_strength": "Password Strength",
+    "password_strength_poor": "Poor",
+    "password_strength_weak": "Weak",
+    "password_strength_normal": "Normal",
+    "password_strength_good": "Good",
+    "password_strength_strong": "Strong",
+    "password_confirm": "Password Confirm",
+    "password_confirm_invalid": "Password confirm is invalid",
+    "password_confirm_required": "Password confirm is required",
+    "go-login": "Already have an account?",
+    "license_agree": "I have read and agree to the <0> Terms of Service </0> and <1> Privacy Policy </1>",
+    "agree_required": "You must agree to the terms and conditions",
+    "invite_code": "Invite Code",
+    "invite_code_max": "Invite code cannot be longer than {{count}} characters",
+    "invite_code_placeholder_optional": "Optional",
+    "invite_code_placeholder_required": "Required",
+    "submit": "Register"
+  },
+  "forgot_password": {
+    "title": "Forgot Password",
+    "back_to_login": "Back to Login",
+    "email": "Email",
+    "email_placeholder": "Please enter your email",
+    "email_required": "Email is required",
+    "email_invalid": "Email is invalid",
+    "email_code": "Verification Code",
+    "email_code_placeholder": "Please enter your verification code",
+    "email_code_required": "Verification code is required",
+    "email_code_min": "Verification code must be at least {{count}} characters",
+    "email_code_max": "Verification code cannot be longer than {{count}} characters",
+    "send_email_code": "Send",
+    "password": "Password",
+    "password_placeholder": "Please enter your password",
+    "password_required": "Password is required",
+    "password_min": "Password must be at least {{count}} characters",
+    "password_max": "Password cannot be longer than {{count}} characters",
+    "password_confirmation": "Password Confirm",
+    "password_confirmation_placeholder": "Please enter your password again",
+    "password_confirmation_required": "Password confirm is required",
+    "password_confirmation_invalid": "Password confirm is invalid",
+    "password_strength": "Password Strength",
+    "password_strength_poor": "Poor",
+    "password_strength_weak": "Weak",
+    "password_strength_normal": "Normal",
+    "password_strength_good": "Good",
+    "password_strength_strong": "Strong",
+    "password_confirm": "Password Confirm",
+    "password_confirm_invalid": "Password confirm is invalid",
+    "password_confirm_required": "Password confirm is required",
+    "submit": "Reset Password"
+  },
+  "auth": {
+    "captcha": {
+      "title": "Captcha",
+      "description": "Please complete the verification below",
+      "submit": "Submit",
+      "success": "Verification successful",
+      "error": "Verification failed",
+      "error_null_token": "Verification token cannot be empty"
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>MENGWU</0> All Right Reserved.",
+      "links": {
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+      }
+    }
+  },
+  "dashboard": {
+    "announcement": {
+      "chip": "Announcement",
+      "title": "Announcement"
+    },
+    "subscription-card": {
+      "title": "Subscription",
+      "description": "You can view the subscription information here",
+      "plan": "Plan",
+      "expire_forever": "Never Expire",
+      "expire_limited_zero": "Expired/Expired Soon",
+      "expire_limited_other": "Expired on {{date}}, {{count}} days until expiration, will reset traffic in {{reset_date}} days",
+      "traffic": "Used {{used}} GB / Total {{total}} GB",
+      "no-subscription": "No subscription"
+    },
+    "shortcut": {
+      "title": "Shortcut",
+      "description": "You can quickly access the commonly used functions here",
+      "tutorial": {
+        "primary": "Tutorial",
+        "secondary": "View the tutorial to learn how to use the service of us"
+      },
+      "subscribe": {
+        "primary": "Subscribe",
+        "secondary": "Quickly import nodes to the corresponding client for use",
+        "copy": "Copy Link",
+        "scan": "Scan QR code",
+        "scan_tips": "Use a client which supports scanning QR codes to subscribe",
+        "clash": "Import into Clash",
+        "clashx": "Import into ClashX",
+        "surfboard": "Import into Surfboard",
+        "shadowrocket": "Import into Shadowrocket",
+        "quantumultx": "Import into Quantumult X",
+        "surge": "Import into Surge",
+        "stash": "Import into Stash",
+        "buy-button": "Buy"
+      },
+      "purchase": {
+        "primary_purchased": "Renew",
+        "secondary_purchased": "Renew your subscription",
+        "primary_not_purchased": "Purchase",
+        "secondary_not_purchased": "Purchase a subscription"
+      },
+      "ticket": {
+        "primary": "Ticket",
+        "secondary": "Submit a ticket to get help"
+      }
+    },
+    "alert": {
+      "pending-order": "You have {{count}} pending orders, please pay in time.",
+      "pending-order_one": "You have 1 pending order, please pay in time.",
+      "pending-order-action": "查看订单"
+    }
+  },
+  "maintenance": {
+    "404": {
+      "title": "Page Not Found",
+      "description": "The page you are looking for does not exist.",
+      "button": "Back to Home"
+    }
+  },
+  "knowledge": {
+    "title": "Knowledge",
+    "description": "You can view the knowledge here",
+    "search": "Search",
+    "search_placeholder": "Search",
+    "post": {
+      "update": "Updated on {{date}}"
+    }
+  },
+  "subscription": {
+    "buy": {
+      "filter-card": {
+        "title": "Filter",
+        "plan-type": {
+          "title": "Plan Type",
+          "all": "All",
+          "period": "Periodic",
+          "traffic": "Traffic"
+        },
+        "payment-type": {
+          "title": "Payment period",
+          "onetime_price": "Disposable",
+          "month_price": "Monthly",
+          "quarter_price": "Quarterly",
+          "half_year_price": "Semiannually",
+          "year_price": "Annually",
+          "two_year_price": "Biennially",
+          "three_year_price": "Triennially"
+        }
+      },
+      "products-header": {
+        "search": "Search",
+        "filter-button": "Filter"
+      },
+      "product-card": {
+        "price-mode_onetime_price": "Disposable",
+        "price-mode_month_price": "Pay Monthly",
+        "price-mode_quarter_price": "Pay Quarterly",
+        "price-mode_half_year_price": "Pay Semiannually",
+        "price-mode_year_price": "Pay Annually",
+        "price-mode_two_year_price": "Pay Biennially",
+        "price-mode_three_year_price": "Pay Triennially",
+        "buy-button": "Buy"
+      }
+    },
+    "plan": {
+      "plan-info-card": {
+        "title": "Plan: {{name}}"
+      },
+      "period-select-card": {
+        "title": "Payment period",
+        "price": "￥ {{price}}",
+        "period_onetime_price": "Disposable Payment",
+        "period_month_price": "Pay Monthly",
+        "period_quarter_price": "Pay Quarterly",
+        "period_half_year_price": "Pay Semiannually",
+        "period_year_price": "Pay Annually",
+        "period_two_year_price": "Pay Biennially",
+        "period_three_year_price": "Pay Triennially"
+      },
+      "coupon-card": {
+        "title": "Coupon",
+        "placeholder": "Enter the coupon code if you have",
+        "tooltip_add": "Add it",
+        "tooltip_reset": "Reset it"
+      },
+      "order-info-card": {
+        "title": "Order info",
+        "price": "￥ {{price}}",
+        "coupon": "Coupon: {{name}}",
+        "total": "Total price",
+        "button": "Create Order"
+      }
+    }
+  },
+  "order": {
+    "checkout": {
+      "product-info-card": {
+        "title": "Product info",
+        "product-name": "Product name",
+        "product-type": "Product type",
+        "product-period": "undefined",
+        "product-period_onetime_price": "Disposable Payment",
+        "product-period_month_price": "Pay Monthly",
+        "product-period_quarter_price": "Pay Quarterly",
+        "product-period_half_year_price": "Pay Semiannually",
+        "product-period_year_price": "Pay Annually",
+        "product-period_two_year_price": "Pay Biennially",
+        "product-period_three_year_price": "Pay Triennially",
+        "traffic": "Traffic limit",
+        "traffic_limited": "{{count}} GB",
+        "traffic_unlimited": "Unlimited",
+        "product-price": "Price",
+        "next-billing-date": "Next billing date"
+      },
+      "status-card": {
+        "status_pending": "Pending",
+        "status_paid": "Paid",
+        "status_cancelled": "Cancelled",
+        "status_finished": "Finished",
+        "description_pending": "Your order has been created but not yet paid for. Please pay as soon as possible to avoid order expiration.",
+        "description_paid": "Your order has been paid, please wait for the service assignment.",
+        "description_cancelled": "Your order has been cancelled, you can view your order information below.",
+        "description_finished": "Your order has been completed, you can view the order information below."
+      },
+      "order-info-card": {
+        "title": "Order info",
+        "order-number": "Order No.",
+        "order-date": "Order date",
+        "order-status": "Order status",
+        "order-status-value_pending": "pending",
+        "order-status-value_paid": "paid",
+        "order-status-value_cancelled": "cancelled",
+        "order-amount": "Order amount",
+        "price": "{{value}} CNY",
+        "coupon-amount": "Discounted price",
+        "subscription-deduct-amount": "Old subscription deduction",
+        "cancel-tooltip": "Cancel order",
+        "cancel-dialog": {
+          "title": "Warning",
+          "content": "If you have already paid, canceling the order may result in payment failure. Are you sure you want to cancel the order?",
+          "cancel-button": "Cancel",
+          "confirm-button": "Confirm"
+        }
+      },
+      "payment-method-card": {
+        "title": "Payment method"
+      },
+      "billing-card": {
+        "title": "Billing info",
+        "price": "{{value}}",
+        "deduction": "Deduction",
+        "button": "Pay",
+        "total-price": "Total price"
+      }
+    },
+    "list": {
+      "table": {
+        "trade_no_header": "Order No.",
+        "trade_no_description": "The order number is the unique ID of the order, and you can query the order info through the number.",
+        "plan_name_header": "Product",
+        "plan_name_description": "The product is the name of the product you purchased.",
+        "total_amount_header": "Amount",
+        "total_amount_description": "The order amount is the final price you pay for the product you purchased.",
+        "status_header": "Status",
+        "status_description": "The order status indicates the current status of the order.",
+        "status-value_pending": "Pending",
+        "status-value_paid": "Paid",
+        "status-value_cancelled": "Cancelled",
+        "status-value_finished": "Finished",
+        "period_header": "Payment period",
+        "period_description": "A Service Period is the period during which your Services are valid.",
+        "period-value": "undefined",
+        "period-value_onetime_price": "One-time payment",
+        "period-value_month_price": "Monthly payment",
+        "period-value_quarter_price": "Quarterly payment",
+        "period-value_half_year_price": "Semi-annually payment",
+        "period-value_year_price": "Annually payment",
+        "period-value_two_year_price": "Biennially payment",
+        "period-value_three_year_price": "Triennially payment",
+        "created_at_header": "Order date",
+        "created_at_description": "Order date is the time when the order is generated in the system.",
+        "action_header": "Actions",
+        "action-view": "View order",
+        "action-cancel": "Cancel order"
+      }
+    }
+  },
+  "node": {
+    "status": {
+      "table": {
+        "id_header": "ID",
+        "name_header": "Name",
+        "status_header": "Status",
+        "type_header": "Protocol",
+        "rate_header": "Rate",
+        "tags_header": "Tags"
+      }
+    }
+  },
+  "invite": {
+    "my-invite": {
+      "invitation-card": {
+        "title": "My Invitation",
+        "currency": "CNY",
+        "description": "Current Remaining Commission",
+        "helperText": "Invite friends to register, you and your friends will get invitation rewards.",
+        "transfer-button": "Transfer",
+        "transfer-dialog": {
+          "title": "Transfer promotional commission to balance",
+          "info": "The transferred balance is only used for {{siteName}} consumption.",
+          "total-amount_label": "Current Promotion Commission Balance",
+          "transfer-amount_label": "Transfer Amount",
+          "cancel-button": "Cancel",
+          "confirm-button": "Confirm",
+          "validation_min": "The minimum withdrawal amount is {{count}} CNY",
+          "validation_max": "The maximum withdrawal amount is {{count}} CNY",
+          "validation_required": "Please enter the withdrawal amount."
+        },
+        "withdraw-button": "Withdraw",
+        "withdraw-dialog": {
+          "title": "Promotion commission withdrawal",
+          "info": "{{amount}} CNY can be withdrawn, and will be deducted from the promotion commission after withdrawal.",
+          "withdraw-account_label": "Withdrawal account",
+          "withdraw-method_label": "Withdrawal method",
+          "withdraw-amount_label": "Withdrawal amount",
+          "cancel-button": "Cancel",
+          "confirm-button": "Confirm",
+          "validation_required": "Please enter the {{name}}."
+        }
+      },
+      "info-card": {
+        "title": "Statistics",
+        "user-register-count": "Number of registered users",
+        "user-register-count-value_one": "1 person",
+        "user-register-count-value": "{{count}} people",
+        "commission-rate": "Commission rate",
+        "commission-rate-value": "{{rate}} %",
+        "commission-confirming": "Commission to be confirmed",
+        "commission-confirming-value": "{{count}} CNY",
+        "commission-total": "Cumulative commission",
+        "commission-total-value": "{{count}} CNY"
+      },
+      "invite-codes-table": {
+        "title": "My invitation code",
+        "generate_tooltip": "Generate invitation code",
+        "id_header": "ID",
+        "code_header": "Code",
+        "code_description": "The invite code is an important part of your invite link.",
+        "created_at_header": "Created At",
+        "created_at_description": "Creation time is the time when the invitation code is generated in the system.",
+        "actions_header": "Actions",
+        "action-copy": "Copy",
+        "action-delete": "Delete"
+      }
+    },
+    "commissions": {
+      "id_header": "ID",
+      "order-amount_header": "Order amount",
+      "order-amount_description": "The order amount is the order amount when the user purchases the product.",
+      "get-amount_header": "Earned commission",
+      "get-amount_description": "Earned commission is the commission you earn after a user purchases an item.",
+      "created-at_header": "Created At",
+      "created-at_description": "The creation time is the time when the commission is generated in the system.",
+      "amount-value": "{{value}} CNY"
+    }
+  },
+  "profile": {
+    "account-info-card": {
+      "title": "Account Info",
+      "table": {
+        "email_key": "Email",
+        "email_value": "{{email}}",
+        "plan_id_key": "Plan ID",
+        "plan_id_value": "{{count}}",
+        "plan_id_value_zero": "None",
+        "plan_expired_at_key": "Subscription Expire",
+        "plan_expired_at_value": "{{date}}",
+        "created_at_key": "Created At",
+        "created_at_value": "{{date}}"
+      }
+    },
+    "wallet-card": {
+      "title": "My Wallet",
+      "table": {
+        "balance_key": "Balance",
+        "balance_value": "{{value}} CNY",
+        "commission_balance_key": "Promotion commission",
+        "commission_balance_value": "{{value}} CNY"
+      }
+    },
+    "change-password-card": {
+      "title": "Change Password",
+      "form": {
+        "old_password_label": "Old Password",
+        "old_password_required": "Please enter old password.",
+        "new_password_label": "New Password",
+        "new_password_required": "Please enter a new password.",
+        "new_password_min": "The new password must be at least {{count}} characters long.",
+        "confirm_password_label": "Confirm Password",
+        "confirm_password_required": "Please enter the confirmation password.",
+        "confirm_password_not_match": "The two entered passwords do not match.",
+        "submit-button": "Submit",
+        "reset-button": "Reset"
+      }
+    },
+    "notification-card": {
+      "title": "Notification settings",
+      "expired_notify_label": "Subscription expiration reminder",
+      "traffic_notify_label": "Traffic usage reminder",
+      "save-button": "Save"
+    },
+    "telegram-card": {
+      "title": "Telegram Notification",
+      "description": "After binding your Telegram account, you can receive notifications such as subscription expiration reminders and data usage reminders on Telegram.",
+      "add_bot": "Add bot",
+      "add_bot_content": "Please download Telegram and follow the link to add a bot: <0>https://t.me/{{name}}<0>",
+      "send_command_label": "Send command",
+      "send_command_content": "Please send the command {{command}} to the robot in Telegram to bind the account.",
+      "add_to_group_label": "Join the Telegram group",
+      "add_to_group_content": "Join the Telegram group for more help: <0>{{link}}</0>",
+      "next_step": "Next",
+      "previous_step": "Previous"
+    },
+    "reset-subscription-card": {
+      "title": "Reset Subscription",
+      "alert": "When your subscription address or account is leaked and misused by others, you can reset your subscription information here. Avoid unnecessary losses.",
+      "button": "Go Reset",
+      "dialog": {
+        "title": "Are you sure you want to reset subscription information?",
+        "content": "This can be done if your subscription address or information is compromised. After resetting, your UUID and subscription will change, and you need to re-import the subscription.",
+        "cancel": "Cancel",
+        "confirm": "Confirm"
+      }
+    }
+  },
+  "ticket": {
+    "drawer": {
+      "title": "Ticket",
+      "new-ticket": "New Ticket",
+      "updated_at_just_now": "Just now",
+      "updated_at": "Updated at {{date}}",
+      "updated_at_minute_one": "Updated 1 minute ago",
+      "updated_at_minute": "Updated {{count}} minutes ago",
+      "updated_at_hour_one": "Updated {{count}} hours ago",
+      "updated_at_hour": "Updated {{count}} hours ago",
+      "updated_at_day_one": "Updated {{count}} day ago",
+      "updated_at_day": "Updated {{count}} days ago",
+      "updated_at_month_one": "Updated {{count}} month ago",
+      "updated_at_month": "Updated {{count}} months ago",
+      "updated_at_year_one": "Updated {{count}} year ago",
+      "updated_at_year": "Updated {{count}} years ago",
+      "reply_status_replied": "Replied",
+      "reply_status_pending": "Pending reply",
+      "reply_status_closed": "Closed",
+      "search_placeholder": "Search",
+      "create_dialog": {
+        "title": "New Ticket",
+        "subject_label": "Subject",
+        "subject_required": "Please enter a subject.",
+        "message_label": "Content",
+        "message_required": "Please enter content.",
+        "level_label": "Priority",
+        "level_required": "Please select a priority.",
+        "level_0": "Low",
+        "level_1": "Medium",
+        "level_2": "High",
+        "cancel_button": "Cancel",
+        "submit_button": "Submit"
+      }
+    },
+    "header": {
+      "title": "Ticket {{id}}: {{subject}}",
+      "ticket_level_low": "Low Priority",
+      "ticket_level_medium": "Medium Priority",
+      "ticket_level_high": "High Priority",
+      "close_dialog": {
+        "title": "Close Ticket",
+        "content": "Are you sure you want to close the ticket? After the ticket is closed, it cannot be opened again. Of course, you can continue your consultation by creating a new ticket.",
+        "cancel-button": "Cancel",
+        "confirm-button": "Confirm"
+      }
+    },
+    "conversation": {
+      "none_selected": "No ticket"
+    },
+    "input-area": {
+      "input_placeholder": "Enter your message",
+      "submit-button": "Submit"
+    }
+  },
+  "traffic": {
+    "alert": "Traffic details only retain the data of the past month for query. This data is not guaranteed to be 100% accurate and is for informational purposes only.",
+    "table": {
+      "record_at_header": "Record Time",
+      "record_at_description": "The system will obtain and record traffic data from each node at 00:00 every night.",
+      "upload_header": "Upload Traffic",
+      "upload_description": "Use the traffic uploaded by the node to the remote server.",
+      "download_header": "Download Traffic",
+      "download_description": "Use the traffic downloaded by the node from the remote server.",
+      "server_rate_header": "Node Rate",
+      "server_rate_description": "Node multiplier, billing traffic = actual traffic x multiplier.",
+      "total_header": "Total Traffic",
+      "total_description": "The total traffic of the current item may be inconsistent with the actual traffic, and is used for billing."
+    },
+    "chart": {
+      "title": "Traffic Statistics",
+      "upload_name": "Upload",
+      "download_name": "Download",
+      "total_name": "Total"
+    },
+    "info-card": {
+      "title": "Traffic Info",
+      "sum_upload_label": "Monthly Upload",
+      "sum_download_label": "Monthly Download",
+      "sum_total_label": "Total this Month",
+      "day_num_label": "Billing Days",
+      "average_total_label": "Daily Average"
+    }
+  }
+}

@@ -1,0 +1,609 @@
+{
+  "layout": {
+    "header": {
+      "profile": {
+        "user_secondary": "高级客户",
+        "profile_center": "个人中心",
+        "transaction_list": "订单列表",
+        "traffic_statistics": "流量统计",
+        "invitations": "我的邀请",
+        "logout": "退出登录",
+        "logout_tooltip": "登出"
+      },
+      "ticket": {
+        "title": "工单",
+        "no_ticket": "暂无未完成的工单",
+        "view_all": "查看全部",
+        "start_at": "创建于 {{time}}",
+        "updated_at_seconds": "更新于 {{count}} 秒前",
+        "updated_at_minutes": "更新于 {{count}} 分钟前",
+        "updated_at_hours": "更新于 {{count}} 小时前",
+        "updated_at_days": "更新于 {{count}} 天前",
+        "reply_status_replied": "已回复",
+        "reply_status_noreply": "待回复",
+        "refresh_tooltip": "刷新"
+      },
+      "dark-mode-switch": {
+        "title": "切换色彩模式",
+        "follow-system": "跟随系统",
+        "follow-times": "跟随时间",
+        "always-light": "始终亮色",
+        "always-dark": "始终暗色"
+      },
+      "i18n-switch": {
+        "title": "切换语言"
+      }
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>萌物云</0> 版权所有",
+      "contact-us": "联系我们",
+      "privacy-policy": "隐私政策",
+      "terms-of-service": "服务条款"
+    }
+  },
+  "login": {
+    "title": "登录",
+    "email": "邮箱",
+    "email_placeholder": "请输入邮箱",
+    "email_required": "您必须输入邮箱",
+    "email_invalid": "您输入的邮箱无效",
+    "password": "密码",
+    "password_placeholder": "请输入密码",
+    "password_required": "您必须输入密码",
+    "submit": "登录",
+    "go-register": "没有账户？注册一个",
+    "forgot_password": "忘记密码？"
+  },
+  "register": {
+    "title": "注册",
+    "email": "邮箱",
+    "email_placeholder": "请输入邮箱",
+    "email_required": "您必须输入邮箱",
+    "email_invalid": "您输入的邮箱无效",
+    "email_max": "邮箱长度不能超过 {{count}} 个字符",
+    "email_code": "邮箱验证码",
+    "email_code_placeholder": "请输入邮箱验证码",
+    "email_code_required": "您必须输入邮箱验证码",
+    "send_email_code": "验证",
+    "password": "密码",
+    "password_placeholder": "请输入密码",
+    "password_required": "您必须输入密码",
+    "password_min": "密码长度不能少于 {{count}} 个字符",
+    "password_max": "密码长度不能超过 {{count}} 个字符",
+    "password_confirmation": "确认密码",
+    "password_confirmation_placeholder": "请再次输入密码",
+    "password_confirmation_required": "您必须再次输入密码",
+    "password_confirmation_invalid": "您两次输入的密码不一致",
+    "password_strength": "密码强度",
+    "password_strength_poor": "弱",
+    "password_strength_weak": "中",
+    "password_strength_normal": "正常",
+    "password_strength_good": "好",
+    "password_strength_strong": "强",
+    "password_confirm": "确认密码",
+    "password_confirm_invalid": "您两次输入的密码不一致",
+    "password_confirm_required": "您必须再次输入密码",
+    "go-login": "已有账户？登录",
+    "license_agree": "您确保已经完整阅读并同意我们的 <0>服务协议</0> 和 <1>隐私政策</1>",
+    "agree_required": "您必须同意服务协议和隐私政策",
+    "invite_code": "邀请码",
+    "invite_code_max": "邀请码长度不能超过 {{count}} 个字符",
+    "invite_code_placeholder_optional": "请输入邀请码，如果没有请留空",
+    "invite_code_placeholder_required": "请输入邀请码",
+    "submit": "注册"
+  },
+  "forgot_password": {
+    "title": "忘记密码",
+    "back_to_login": "返回登录",
+    "email": "邮箱",
+    "email_placeholder": "请输入邮箱",
+    "email_required": "您必须输入邮箱",
+    "email_invalid": "您输入的邮箱无效",
+    "email_code": "邮箱验证码",
+    "email_code_placeholder": "请输入邮箱验证码",
+    "email_code_required": "您必须输入邮箱验证码",
+    "email_code_min": "邮箱验证码长度不能少于 {{count}} 个字符",
+    "email_code_max": "邮箱验证码长度不能超过 {{count}} 个字符",
+    "send_email_code": "验证",
+    "password": "密码",
+    "password_placeholder": "请输入密码",
+    "password_required": "您必须输入密码",
+    "password_min": "密码长度不能少于 {{count}} 个字符",
+    "password_max": "密码长度不能超过 {{count}} 个字符",
+    "password_confirmation": "确认密码",
+    "password_confirmation_placeholder": "请再次输入密码",
+    "password_confirmation_required": "您必须再次输入密码",
+    "password_confirmation_invalid": "您两次输入的密码不一致",
+    "password_strength": "密码强度",
+    "password_strength_poor": "弱",
+    "password_strength_weak": "中",
+    "password_strength_normal": "正常",
+    "password_strength_good": "好",
+    "password_strength_strong": "强",
+    "password_confirm": "确认密码",
+    "password_confirm_invalid": "您两次输入的密码不一致",
+    "password_confirm_required": "您必须再次输入密码",
+    "submit": "重置密码"
+  },
+  "auth": {
+    "captcha": {
+      "title": "人机验证",
+      "description": "请完成下面的验证",
+      "submit": "提交",
+      "success": "邮件已发送，请注意查收",
+      "error": "验证失败，请重试",
+      "error_null_token": "出现错误，Token 为空，请重试"
+    },
+    "footer": {
+      "copyright": "© {{date}} <0>萌物云</0> 版权所有",
+      "links": {
+        "terms": "服务协议",
+        "privacy": "隐私政策"
+      }
+    }
+  },
+  "dashboard": {
+    "announcement": {
+      "chip": "公告",
+      "title": "公告"
+    },
+    "subscription-card": {
+      "title": "订阅",
+      "description": "您的订阅信息",
+      "plan": "计划",
+      "expire_forever": "此订阅长期有效",
+      "expire_limited_zero": "此订阅已或即将到期，请及时续费",
+      "expire_limited_other": "于 {{date}} 到期，距离到期还有 {{count}} 天，将于 {{reset_date}} 天后重置流量",
+      "traffic": "已用流量 {{used}} GB / 总计流量 {{total}} GB",
+      "no-subscription": "您还没有订阅"
+    },
+    "shortcut": {
+      "title": "捷径",
+      "description": "您的常用操作",
+      "tutorial": {
+        "primary": "使用教程",
+        "secondary": "查看使用教程以了解如何使用本站服务"
+      },
+      "subscribe": {
+        "primary": "一键订阅",
+        "secondary": "快速将节点导入对应客户端进行使用",
+        "copy": "复制订阅链接",
+        "scan": "扫描二维码",
+        "scan_tips": "使用支持扫码的客户端进行订阅",
+        "clash": "导入至 Clash",
+        "clashx": "导入至 ClashX",
+        "surfboard": "导入至 Surfboard",
+        "shadowrocket": "导入至 Shadowrocket",
+        "quantumultx": "导入至 Quantumult X",
+        "surge": "导入至 Surge",
+        "stash": "导入至 Stash",
+        "buy-button": "购买"
+      },
+      "purchase": {
+        "primary_purchased": "续费订阅",
+        "secondary_purchased": "续费订阅以继续使用服务",
+        "primary_not_purchased": "购买订阅",
+        "secondary_not_purchased": "购买订阅以使用服务"
+      },
+      "ticket": {
+        "primary": "提交工单",
+        "secondary": "遇到问题？提交工单寻求帮助"
+      }
+    },
+    "alert": {
+      "pending-order": "您有 {{count}} 笔待支付订单，请及时支付。",
+      "pending-order-action": "查看订单"
+    }
+  },
+  "maintenance": {
+    "404": {
+      "title": "页面未找到",
+      "description": "您访问的页面不存在或已被删除",
+      "button": "返回首页"
+    }
+  },
+  "knowledge": {
+    "title": "常见问题",
+    "description": "您可能会遇到的问题",
+    "search": "搜索问题",
+    "search_placeholder": "输入关键词搜索",
+    "post": {
+      "update": "更新于 {{date}}"
+    }
+  },
+  "subscription": {
+    "buy": {
+      "filter-card": {
+        "title": "筛选",
+        "plan-type": {
+          "title": "计划类型",
+          "all": "全部",
+          "period": "按周期",
+          "traffic": "按流量"
+        },
+        "payment-type": {
+          "title": "支付周期",
+          "onetime_price": "一次性",
+          "month_price": "月付",
+          "quarter_price": "季付",
+          "half_year_price": "半年付",
+          "year_price": "年付",
+          "two_year_price": "两年付",
+          "three_year_price": "三年付"
+        }
+      },
+      "products-header": {
+        "search": "搜索节点",
+        "filter-button": "筛选"
+      },
+      "product-card": {
+        "price-mode_onetime_price": "一次性",
+        "price-mode_month_price": "月付",
+        "price-mode_quarter_price": "季付",
+        "price-mode_half_year_price": "半年付",
+        "price-mode_year_price": "年付",
+        "price-mode_two_year_price": "两年付",
+        "price-mode_three_year_price": "三年付",
+        "buy-button": "购买"
+      }
+    },
+    "plan": {
+      "plan-info-card": {
+        "title": "购买订阅：{{name}}"
+      },
+      "period-select-card": {
+        "title": "付款周期",
+        "price": "￥ {{price}}",
+        "period_onetime_price": "一次性付款",
+        "period_month_price": "每月付款",
+        "period_quarter_price": "每季付款",
+        "period_half_year_price": "每半年付款",
+        "period_year_price": "每年付款",
+        "period_two_year_price": "每两年付款",
+        "period_three_year_price": "每三年付款"
+      },
+      "coupon-card": {
+        "title": "优惠券",
+        "placeholder": "输入优惠券码，若无可不填",
+        "tooltip_add": "使用优惠券",
+        "tooltip_reset": "重置优惠券"
+      },
+      "order-info-card": {
+        "title": "订单信息",
+        "price": "￥ {{price}}",
+        "coupon": "优惠券：{{name}}",
+        "total": "总计",
+        "button": "创建订单"
+      }
+    }
+  },
+  "order": {
+    "checkout": {
+      "product-info-card": {
+        "title": "产品信息",
+        "product-name": "产品名称",
+        "product-type": "订单类型",
+        "product-period": "undefined",
+        "product-period_onetime_price": "一次性付款",
+        "product-period_month_price": "每月付款",
+        "product-period_quarter_price": "每季付款",
+        "product-period_half_year_price": "每半年付款",
+        "product-period_year_price": "每年付款",
+        "product-period_two_year_price": "每两年付款",
+        "product-period_three_year_price": "每三年付款",
+        "traffic": "流量",
+        "traffic_limited": "{{count}} GB",
+        "traffic_unlimited": "不限",
+        "product-price": "价格",
+        "next-billing-date": "下次续费"
+      },
+      "status-card": {
+        "status_pending": "待支付",
+        "status_paid": "已支付",
+        "status_cancelled": "已取消",
+        "status_finished": "已完成",
+        "description_pending": "您的订单已创建，但尚未支付。请尽快支付以免订单过期。",
+        "description_paid": "您的订单已支付成功，请您等候服务分配。",
+        "description_cancelled": "您的订单已被取消，您可以在下方查看订单信息。",
+        "description_finished": "您的订单已完成，您可以在下方查看订单信息。"
+      },
+      "order-info-card": {
+        "title": "订单信息",
+        "order-number": "订单号",
+        "order-date": "订单日期",
+        "order-status": "订单状态",
+        "order-status-value_pending": "待支付",
+        "order-status-value_paid": "已支付",
+        "order-status-value_cancelled": "已取消",
+        "order-amount": "订单金额",
+        "price": "{{value}} CNY",
+        "coupon-amount": "优惠金额",
+        "subscription-deduct-amount": "旧订阅抵扣",
+        "cancel-tooltip": "取消订单",
+        "cancel-dialog": {
+          "title": "注意",
+          "content": "如果您已经付款，取消订单可能会导致支付失败，确定要取消订单吗？",
+          "cancel-button": "取消",
+          "confirm-button": "确定"
+        }
+      },
+      "payment-method-card": {
+        "title": "支付方式"
+      },
+      "billing-card": {
+        "title": "账单信息",
+        "price": "{{value}}",
+        "deduction": "抵扣",
+        "surplus": "余额",
+        "button": "支付",
+        "total-price": "总计"
+      }
+    },
+    "list": {
+      "table": {
+        "trade_no_header": "订单号",
+        "trade_no_description": "订单号是订单的唯一ID，您可以通过订单号查询订单信息。",
+        "plan_name_header": "产品名称",
+        "plan_name_description": "产品名称是您购买的产品的名称。",
+        "total_amount_header": "订单金额",
+        "total_amount_description": "订单金额是您购买的产品的总价。",
+        "status_header": "订单状态",
+        "status_description": "订单状态是订单的当前状态。",
+        "status-value_pending": "待支付",
+        "status-value_paid": "已支付",
+        "status-value_cancelled": "已取消",
+        "status-value_finished": "已完成",
+        "period_header": "服务周期",
+        "period_description": "服务周期是您服务的有效期。",
+        "period-value": "undefined",
+        "period-value_onetime_price": "一次性付款",
+        "period-value_month_price": "月付",
+        "period-value_quarter_price": "季付",
+        "period-value_half_year_price": "半年付",
+        "period-value_year_price": "年付",
+        "period-value_two_year_price": "两年付",
+        "period-value_three_year_price": "三年付",
+        "created_at_header": "创建时间",
+        "created_at_description": "创建时间是订单在系统中生成的时间。",
+        "action_header": "操作",
+        "action-view": "查看详情",
+        "action-cancel": "取消订单"
+      }
+    }
+  },
+  "node": {
+    "status": {
+      "table": {
+        "id_header": "节点 ID",
+        "id_description": "节点 ID 是节点的唯一标识。出现错误时，请向客服提供节点 ID。",
+        "name_header": "节点名称",
+        "name_description": "节点名称是您的节点的名称。",
+        "status_header": "状态",
+        "status_description": "状态表示节点的当前状态，节点每 5 分钟响应一次，如果最近一次响应大于 5 分钟就会返回下线状态。",
+        "type_header": "协议类型",
+        "type_description": "协议类型表示节点支持的协议类型。",
+        "rate_header": "倍率",
+        "rate_description": "倍率表示节点的流量倍率。如倍率为 2x，则计费的流量为实际流量的 2 倍。",
+        "tags_header": "标签",
+        "tags_description": ""
+      }
+    }
+  },
+  "invite": {
+    "my-invite": {
+      "invitation-card": {
+        "title": "我的邀请",
+        "currency": "CNY",
+        "description": "当前剩余佣金",
+        "helperText": "邀请好友注册，您将获得邀请奖励，好友也将获得注册奖励。",
+        "transfer-button": "划转",
+        "transfer-dialog": {
+          "title": "推广佣金划转至余额",
+          "info": "划转后的余额仅用于{{siteName}}消费使用",
+          "total-amount_label": "当前推广佣金余额",
+          "transfer-amount_label": "划转金额",
+          "cancel-button": "取消",
+          "confirm-button": "确定",
+          "validation_min": "最小提现金额为 {{count}} CNY",
+          "validation_max": "最大提现金额为 {{count}} CNY",
+          "validation_required": "请输入提现金额"
+        },
+        "withdraw-button": "提现",
+        "withdraw-dialog": {
+          "title": "推广佣金提现",
+          "info": "{{amount}} CNY 可提现，提现后将从推广佣金中扣除",
+          "withdraw-account_label": "提现账户",
+          "withdraw-method_label": "提现方式",
+          "withdraw-amount_label": "提现金额",
+          "cancel-button": "取消",
+          "confirm-button": "确定",
+          "validation_required": "请输入{{name}}"
+        }
+      },
+      "info-card": {
+        "title": "推广统计",
+        "user-register-count": "用户注册数",
+        "user-register-count-value": "{{count}} 人",
+        "commission-rate": "佣金比例",
+        "commission-rate-value": "{{rate}} %",
+        "commission-confirming": "待确认佣金",
+        "commission-confirming-value": "{{count}} CNY",
+        "commission-total": "累计佣金",
+        "commission-total-value": "{{count}} CNY"
+      },
+      "invite-codes-table": {
+        "title": "我的邀请码",
+        "generate_tooltip": "生成邀请码",
+        "id_header": "ID",
+        "code_header": "邀请码",
+        "code_description": "邀请码是您的邀请链接的重要一部分。",
+        "created_at_header": "创建时间",
+        "created_at_description": "创建时间是邀请码在系统中生成的时间。",
+        "actions_header": "操作",
+        "action-copy": "复制",
+        "action-delete": "删除"
+      }
+    },
+    "commissions": {
+      "id_header": "ID",
+      "order-amount_header": "订单金额",
+      "order-amount_description": "订单金额是用户购买商品时的订单金额。",
+      "get-amount_header": "获得佣金",
+      "get-amount_description": "获得佣金是用户购买商品后你获得的佣金。",
+      "created-at_header": "创建时间",
+      "created-at_description": "创建时间是佣金在系统中生成的时间。",
+      "amount-value": "{{value}} CNY"
+    }
+  },
+  "profile": {
+    "account-info-card": {
+      "title": "账户信息",
+      "table": {
+        "email_key": "邮箱",
+        "email_value": "{{email}}",
+        "plan_id_key": "套餐 ID",
+        "plan_id_value": "{{count}}",
+        "plan_id_value_zero": "无",
+        "plan_expired_at_key": "订阅过期时间",
+        "plan_expired_at_value": "{{date}}",
+        "created_at_key": "创建时间",
+        "created_at_value": "{{date}}"
+      }
+    },
+    "wallet-card": {
+      "title": "我的资产",
+      "table": {
+        "balance_key": "余额",
+        "balance_value": "{{value}} CNY",
+        "commission_balance_key": "推广佣金",
+        "commission_balance_value": "{{value}} CNY"
+      }
+    },
+    "change-password-card": {
+      "title": "修改密码",
+      "form": {
+        "old_password_label": "旧密码",
+        "old_password_required": "请输入旧密码",
+        "new_password_label": "新密码",
+        "new_password_required": "请输入新密码",
+        "new_password_min": "新密码长度不能少于 {{count}} 位",
+        "confirm_password_label": "确认密码",
+        "confirm_password_required": "请输入确认密码",
+        "confirm_password_not_match": "两次输入的密码不一致",
+        "submit-button": "提交",
+        "reset-button": "重置"
+      }
+    },
+    "notification-card": {
+      "title": "通知设置",
+      "expired_notify_label": "订阅过期提醒",
+      "traffic_notify_label": "流量用量提醒",
+      "save-button": "保存"
+    },
+    "telegram-card": {
+      "title": "Telegram 通知",
+      "description": "绑定 Telegram 账号后，您可以在 Telegram 上接收到订阅过期提醒、流量用量提醒等通知。",
+      "bind-button": "绑定",
+      "unbind-button": "解绑",
+      "unbind-confirm": "您确定要解绑 Telegram 账号吗？",
+      "add_bot": "添加机器人",
+      "add_bot_content": "请下载 Telegram 并点击链接添加机器人：<0>https://t.me/{{name}}<0>",
+      "send_command_label": "发送命令",
+      "send_command_content": "请在 Telegram 中向机器人发送命令 {{command}} 绑定账号。",
+      "add_to_group_label": "加入 Telegram 群组",
+      "add_to_group_content": "加入 Telegram 群组以获得更多帮助：<0>{{link}}</0>",
+      "next_step": "下一步",
+      "previous_step": "上一步"
+    },
+    "reset-subscription-card": {
+      "title": "重置订阅",
+      "alert": "当你的订阅地址或账户发生泄漏被他人滥用时，可以在此重置订阅信息。避免带来不必要的损失。",
+      "button": "重置订阅",
+      "dialog": {
+        "title": "确定要重置订阅信息？",
+        "content": "如果您的订阅地址或信息发生泄露可以执行此操作。重置后您的 UUID 及订阅将会变更，需要重新导入订阅。",
+        "cancel": "取消",
+        "confirm": "确定"
+      }
+    }
+  },
+  "ticket": {
+    "drawer": {
+      "title": "工单",
+      "new-ticket": "新建工单",
+      "updated_at_just_now": "刚刚",
+      "updated_at": "更新于 {{date}}",
+      "updated_at_minute": "更新于 {{count}} 分钟前",
+      "updated_at_hour": "更新于 {{count}} 小时前",
+      "updated_at_day": "更新于 {{count}} 天前",
+      "updated_at_month": "更新于 {{count}} 月前",
+      "updated_at_year": "更新于 {{count}} 年前",
+      "reply_status_replied": "已回复",
+      "reply_status_pending": "待回复",
+      "reply_status_closed": "已关闭",
+      "search_placeholder": "搜索工单",
+      "create_dialog": {
+        "title": "新建工单",
+        "subject_label": "主题",
+        "subject_required": "请输入主题",
+        "message_label": "内容",
+        "message_required": "请输入内容",
+        "level_label": "优先级",
+        "level_required": "请选择优先级",
+        "level_0": "低",
+        "level_1": "中",
+        "level_2": "高",
+        "cancel_button": "取消",
+        "submit_button": "提交"
+      }
+    },
+    "header": {
+      "title": "工单 {{id}}：{{subject}}",
+      "ticket_level_low": "优先级：低",
+      "ticket_level_medium": "优先级：中",
+      "ticket_level_high": "优先级：高",
+      "close_dialog": {
+        "title": "关闭工单",
+        "content": "您确定要关闭工单吗？关闭工单后无法继续打开，当然您可以通过创建新的工单来继续您的咨询。",
+        "cancel-button": "取消",
+        "confirm-button": "确定"
+      }
+    },
+    "conversation": {
+      "none_selected": "暂无工单"
+    },
+    "input-area": {
+      "input_placeholder": "输入回复内容",
+      "submit-button": "提交"
+    }
+  },
+  "traffic": {
+    "alert": "流量明细仅保留近一个月数据以供查询。此数据不保证 100% 准确性，仅供参考。",
+    "table": {
+      "record_at_header": "记录时间",
+      "record_at_description": "系统每晚 00:00 会从各节点获取流量数据并记录。",
+      "upload_header": "上传流量",
+      "upload_description": "使用节点上传至远端服务器的流量。",
+      "download_header": "下载流量",
+      "download_description": "使用节点从远端服务器下载的流量。",
+      "server_rate_header": "节点倍率",
+      "server_rate_description": "节点的倍率，计费流量 = 实际流量 x 倍率。",
+      "total_header": "总计",
+      "total_description": "当前项的总计流量，可能与实际流量不一致，用于计费。"
+    },
+    "chart": {
+      "title": "流量统计",
+      "upload_name": "上传",
+      "download_name": "下载",
+      "total_name": "总计"
+    },
+    "info-card": {
+      "title": "流量信息",
+      "sum_upload_label": "本月上传",
+      "sum_download_label": "本月下载",
+      "sum_total_label": "计费流量",
+      "day_num_label": "本月数据",
+      "average_total_label": "日平均流量"
+    }
+  }
+}

@@ -2,7 +2,8 @@
 
 # 为V2board提供的前后端分离主题。
 此套主题是按照开源主题Mantis二次开发所得，此项目代码已修改所有bug，后续有bug或新功能会持续修改更新。\
-演示站：https://moeu02.com
+演示站：https://moeu02.com\
+TG频道：https://t.me/maimai778
 
 ## 环境配置：
 nodejs v18.12.1\

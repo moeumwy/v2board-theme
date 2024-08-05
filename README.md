@@ -1,7 +1,7 @@
 # v2board-theme
 
 # 为V2board提供的前后端分离主题。
-
+此套主题是按照开源主题Mantis二次开发所得，此项目代码已修改所有bug，后续有bug或新功能会持续修改更新。\
 演示站：https://moeu02.com
 
 ## 环境配置：
@@ -17,7 +17,7 @@ Logo修改\
 /src/sections/auth/auth-forms/AuthRegister.tsx\
 /src/layout/MainLayout/Footer.tsx\
 如需添加crisp客服请在index.html中head标签内添加script\
-其余修改请自行search\
+其余修改请自行search
 
 ## 打包命令
 ```

@@ -6,7 +6,8 @@ import { Dialog, DialogContent, DialogTitle, InputAdornment } from "@mui/materia
 import { useSnackbar } from "notistack";
 
 // third party
-import ReCaptcha from "react-google-recaptcha";
+// import ReCaptcha from "react-google-recaptcha";
+import  Turnstile  from 'react-turnstile';
 import { Trans, useTranslation } from "react-i18next";
 
 // project import
@@ -49,15 +50,10 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
           <Trans i18nKey={"auth.captcha.title"}>Captcha</Trans>
         </DialogTitle>
         <DialogContent>
-          <ReCaptcha
+          <Turnstile
             sitekey={guestConfig?.recaptcha_site_key!}
-            onChange={(token: string | null) => {
-              if (lo.isNull(token)) {
-                enqueueSnackbar(t("auth.captcha.error_null_token"), { variant: "error" });
-                return;
-              }
-
-              sendEmailVerify({ email, recaptcha_data: token! })
+            onVerify={(token) => {
+              sendEmailVerify({ email, recaptcha_data: token })
                 .unwrap()
                 .then(() => {
                   enqueueSnackbar(t("auth.captcha.success"), { variant: "success" });
@@ -68,7 +64,7 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
                     success: true
                   });
                 })
-                .catch((err) => {
+                .catch((err: any) => {
                   console.error(err);
                   enqueueSnackbar(t("auth.captcha.error"), { variant: "error" });
                   ReactGA.event("send_email_verify", {
@@ -82,6 +78,9 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
                 .finally(() => {
                   setOpen(false);
                 });
+            }}
+            onError={() => {
+              enqueueSnackbar(t("auth.captcha.error"), { variant: "error" });
             }}
           />
         </DialogContent>

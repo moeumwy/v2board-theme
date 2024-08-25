@@ -26,3 +26,8 @@ pnpm install
 pnpm build
 ```
 打包完成后得到dist文件夹，丢到网站根目录即可。
+
+
+## 更新日志
+2024.08.06\
+将Google Recaptcha更换为Cloudflare Turnstile

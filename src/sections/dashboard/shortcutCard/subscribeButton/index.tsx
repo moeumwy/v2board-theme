@@ -63,7 +63,7 @@ const SubscribeButton: React.FC = () => {
       case "Linux":
         return [ClashButton];
       default:
-        return [];
+        return [ClashButton];
     }
   }, [UserAgentData.os.name]);
 

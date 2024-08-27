@@ -31,7 +31,7 @@ pnpm build
 可在上方频道中或Issues提问
 
 ## 关于部署完成后刷新页面出现404
-如果aapanel部署可在网站URL Rewrite中填入\
+如果aapanel部署可在网站URL Rewrite中填入
 ```
 location / {  
     try_files $uri $uri/ /index.html$is_args$query_string;  

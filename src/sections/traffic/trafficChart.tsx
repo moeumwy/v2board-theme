@@ -30,12 +30,12 @@ const TrafficChart: React.FC = () => {
               (acc, cur) =>
                 acc.set(cur.record_at, {
                   u:
-                    cur.u / (isNaN(parseInt(cur.server_rate)) ? 1 : parseInt(cur.server_rate)) +
+                    cur.u / parseFloat(cur.server_rate) +
                     (acc.get(cur.record_at)?.u ?? 0),
                   d:
-                    cur.d / (isNaN(parseInt(cur.server_rate)) ? 1 : parseInt(cur.server_rate)) +
+                    cur.d / parseFloat(cur.server_rate) +
                     (acc.get(cur.record_at)?.d ?? 0),
-                  total: (cur.u + cur.d) / parseInt(cur.server_rate) + (acc.get(cur.record_at)?.total ?? 0)
+                  total: (cur.u + cur.d) / parseFloat(cur.server_rate) + (acc.get(cur.record_at)?.total ?? 0)
                 }),
               new Map<
                 number,

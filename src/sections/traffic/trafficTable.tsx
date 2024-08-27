@@ -41,8 +41,10 @@ const TrafficTable: React.FC = () => {
         description: t("traffic.table.upload", { context: "description" }).toString(),
         width: 120,
         type: "number",
-        valueGetter: (params) =>
-          params.value / (isNaN(parseInt(params.row.server_rate)) ? 1 : parseInt(params.row.server_rate)),
+        valueGetter: (params) => {
+          const serverRate = parseFloat(params.row.server_rate);
+          return params.value / serverRate;
+        },
         valueFormatter: (params) =>
           filesize(params.value as number, { base: 2, standard: "jedec", round: 2, roundingMethod: "floor" })
       },
@@ -52,8 +54,10 @@ const TrafficTable: React.FC = () => {
         description: t("traffic.table.download", { context: "description" }).toString(),
         width: 120,
         type: "number",
-        valueGetter: (params) =>
-          params.value / (isNaN(parseInt(params.row.server_rate)) ? 1 : parseInt(params.row.server_rate)),
+        valueGetter: (params) => {
+          const serverRate = parseFloat(params.row.server_rate);
+          return params.value / serverRate;
+        },
         valueFormatter: (params) =>
           filesize(params.value as number, { base: 2, standard: "jedec", round: 2, roundingMethod: "floor" })
       },
@@ -63,8 +67,8 @@ const TrafficTable: React.FC = () => {
         description: t("traffic.table.server_rate", { context: "description" }).toString(),
         width: 120,
         type: "number",
-        valueGetter: (params) => parseInt(params.value) || 1,
-        valueFormatter: (params) => `${params.value.toFixed(2)} x`
+        valueGetter: (params) => parseFloat(params.value).toFixed(2),
+        valueFormatter: (params) => `${params.value} x`
       },
       {
         field: "total",

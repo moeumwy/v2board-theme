@@ -28,6 +28,13 @@ pnpm build
 打包完成后得到dist文件夹，丢到网站根目录即可。
 
 
+## 友情捐赠
+TRC-20 TSLZs2cJorBgMDrWLaTA2dBxWqLCLJbY3o\
+Polygon 0xB578cb7F5A47a9856BC20C083E9c47b5d932522E
+
+
 ## 更新日志
+2024.08.27\
+修复仪表盘页面未识别到设备类型导致的无法正常复制订阅链接的问题
 2024.08.06\
 将Google Recaptcha更换为Cloudflare Turnstile

@@ -27,6 +27,16 @@ pnpm build
 ```
 打包完成后得到dist文件夹，丢到网站根目录即可。
 
+## 关于提交BUG
+可在上方频道中或Issues提问
+
+## 关于部署完成后刷新页面出现404
+如果aapanel部署可在网站URL Rewrite中填入
+```
+location / {  
+    try_files $uri $uri/ /index.html$is_args$query_string;  
+}
+```
 
 ## 友情捐赠
 TRC-20 TSLZs2cJorBgMDrWLaTA2dBxWqLCLJbY3o\
@@ -35,6 +45,6 @@ Polygon 0xB578cb7F5A47a9856BC20C083E9c47b5d932522E
 
 ## 更新日志
 2024.08.27\
-修复仪表盘页面未识别到设备类型导致的无法正常复制订阅链接的问题
+修复仪表盘页面未识别到设备类型导致的无法正常复制订阅链接的问题\
 2024.08.06\
 将Google Recaptcha更换为Cloudflare Turnstile

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
 // material-ui
-import { Box, ButtonBase, Chip, Dialog, DialogContent, DialogTitle, Typography, useMediaQuery } from "@mui/material";
+import { Box, ButtonBase, Chip, Dialog, DialogContent, DialogTitle as MuiDialogTitle, Typography, useMediaQuery } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
 // project imports
@@ -19,13 +19,13 @@ import ReactGA from "react-ga4";
 
 const useStyles = makeStyles()((theme) => ({
   carousel: {
-    borderRadius: theme.shape.borderRadius
+    borderRadius: theme.shape.borderRadius,
   },
   item: {
     height: theme.spacing(24),
     width: "100%",
     boxShadow: "0 1px 3px rgb(219 226 239 / 50%), 0 1px 2px rgb(219 226 239 / 50%)",
-    textAlign: "left"
+    textAlign: "left",
   },
   mask: {
     position: "absolute",
@@ -34,12 +34,12 @@ const useStyles = makeStyles()((theme) => ({
     width: "100%",
     height: "100%",
     background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%)",
-    opacity: 0.5
+    opacity: 0.5,
   },
   chip: {
     position: "absolute",
     top: theme.spacing(2),
-    left: theme.spacing(2)
+    left: theme.spacing(2),
   },
   textArea: {
     position: "absolute",
@@ -47,13 +47,20 @@ const useStyles = makeStyles()((theme) => ({
     left: theme.spacing(2),
     maxWidth: "80%",
     color: theme.palette.primary.contrastText,
-    padding: theme.spacing(1, 1, 1, 0.5)
-  }
+    padding: theme.spacing(1, 1, 1, 0.5),
+  },
+  dialogImage: {
+    width: "100%",
+    height: "auto",
+    marginBottom: theme.spacing(2),
+  },
+  dialogTitle: {
+    fontWeight: "bold",
+    fontSize: "1.5rem",
+  },
 }));
 
-const NoticeBlock: React.FC<{
-  notice: Notice;
-}> = ({ notice }) => {
+const NoticeBlock: React.FC<{ notice: Notice }> = ({ notice }) => {
   const [open, setOpen] = React.useState(false);
   const { t } = useTranslation();
 
@@ -66,7 +73,8 @@ const NoticeBlock: React.FC<{
         key={notice.id}
         className={classes.item}
         sx={{
-          backgroundImage: `url(${notice.img_url || defaultBackgroundImage})`
+          backgroundImage: `url(${notice.img_url || defaultBackgroundImage})`,
+          backgroundSize: "cover"
         }}
         onClick={() => {
           setOpen(true);
@@ -75,7 +83,7 @@ const NoticeBlock: React.FC<{
             category: "notice",
             label: "notice_open",
             id: notice.id,
-            title: notice.title
+            title: notice.title,
           });
         }}
       >
@@ -89,12 +97,9 @@ const NoticeBlock: React.FC<{
         </Box>
       </Box>
       <Dialog open={open} onClose={() => setOpen(false)} fullWidth>
-        <DialogTitle>{notice.title}</DialogTitle>
-        <DialogContent
-          sx={{
-            minHeight: 160
-          }}
-        >
+        <Box component="img" src={notice.img_url || defaultBackgroundImage} alt={notice.title} className={classes.dialogImage} />
+        <MuiDialogTitle className={classes.dialogTitle}>{notice.title}</MuiDialogTitle>
+        <DialogContent sx={{ minHeight: 160 }}>
           <MuiMarkdown>{notice.content}</MuiMarkdown>
         </DialogContent>
       </Dialog>
@@ -102,13 +107,23 @@ const NoticeBlock: React.FC<{
   );
 };
 
-const NoticeCarousel: React.FC = () => {
+const NoticeCarousel: React.FC<{ onLatestNotice?: (notice: Notice) => void }> = ({ onLatestNotice }) => {
   const { data: notices } = useGetNoticesQuery();
 
   const { classes } = useStyles();
-
   const theme = useTheme();
   const isMobileSize = useMediaQuery(theme.breakpoints.down("xs"));
+
+  useEffect(() => {
+    if (notices && notices.length > 0) {
+      const latestNotice = notices.reduce((prev, current) =>
+        dayjs.unix(current.created_at).isAfter(dayjs.unix(prev.created_at)) ? current : prev
+      );
+      if (onLatestNotice) {
+        onLatestNotice(latestNotice);
+      }
+    }
+  }, [notices, onLatestNotice]);
 
   return (
     <Carousel

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import lo from "lodash-es";
 
 // material-ui
@@ -31,6 +31,42 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
   const { t } = useTranslation();
 
   const [open, setOpen] = React.useState(false);
+  const [cooldown, setCooldown] = useState(0);
+  useEffect(() => {
+    if (cooldown > 0) {
+      const timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [cooldown]);
+
+  const handleVerify = (token: string) => {
+    sendEmailVerify({ email, recaptcha_data: token })
+      .unwrap()
+      .then(() => {
+        enqueueSnackbar(t("auth.captcha.success"), { variant: "success" });
+        ReactGA.event("send_email_verify", {
+          category: "auth",
+          label: "send_email_verify",
+          email: email,
+          success: true,
+        });
+        setCooldown(60); // 开启 60 秒冷却时间
+      })
+      .catch((err: any) => {
+        console.error(err);
+        enqueueSnackbar(t("auth.captcha.error"), { variant: "error" });
+        ReactGA.event("send_email_verify", {
+          category: "auth",
+          label: "send_email_verify",
+          email: email,
+          success: false,
+          error: err,
+        });
+      })
+      .finally(() => {
+        setOpen(false);
+      });
+  };
 
   return (
     <>
@@ -40,9 +76,17 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
           onClick={() => setOpen(true)}
           edge="end"
           color="secondary"
-          disabled={isLoading}
+          disabled={isLoading || cooldown > 0}
+          sx={{
+            backgroundColor: 'rgba(51, 102, 255, 0.9)',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(51, 102, 255, 1)',
+            },
+            padding: 1.5,
+          }}
         >
-          <SendOutlined />
+          {cooldown > 0 ? `${cooldown}s` : <SendOutlined />}
         </IconButton>
       </InputAdornment>
       <Dialog open={open} onClose={() => setOpen(false)}>
@@ -94,6 +138,14 @@ const SendMailButton: React.FC<SendMailButtonProps> = ({ email }) => {
   const { data: siteConfig } = useGetGuestConfigQuery();
   const { enqueueSnackbar } = useSnackbar();
   const { t } = useTranslation();
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    if (cooldown > 0) {
+      const timer = setTimeout(() => setCooldown(cooldown - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [cooldown]);
 
   const handleSendEmailCode = () => {
     console.log("send email code");
@@ -101,6 +153,7 @@ const SendMailButton: React.FC<SendMailButtonProps> = ({ email }) => {
       .unwrap()
       .then(() => {
         enqueueSnackbar(t("auth.captcha.success"), { variant: "success" });
+        setCooldown(60);
       })
       .catch((err) => {
         console.error(err);
@@ -118,9 +171,17 @@ const SendMailButton: React.FC<SendMailButtonProps> = ({ email }) => {
           onClick={handleSendEmailCode}
           edge="end"
           color="secondary"
-          disabled={isLoading}
+          disabled={isLoading || cooldown > 0}
+          sx={{
+            backgroundColor: 'primary.main',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(51, 102, 255, 0.9)',
+            },
+            padding: 1.5,
+          }}
         >
-          <SendOutlined />
+          {cooldown > 0 ? `${cooldown}s` : <SendOutlined />}
         </IconButton>
       </InputAdornment>
     );

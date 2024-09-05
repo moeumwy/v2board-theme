@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 
 // third-party
 import ReactApexChart from "react-apexcharts";
@@ -30,12 +30,12 @@ const TrafficChart: React.FC = () => {
               (acc, cur) =>
                 acc.set(cur.record_at, {
                   u:
-                    cur.u / parseFloat(cur.server_rate) +
+                    cur.u +
                     (acc.get(cur.record_at)?.u ?? 0),
                   d:
-                    cur.d / parseFloat(cur.server_rate) +
+                    cur.d +
                     (acc.get(cur.record_at)?.d ?? 0),
-                  total: (cur.u + cur.d) / parseFloat(cur.server_rate) + (acc.get(cur.record_at)?.total ?? 0)
+                  total: (cur.u + cur.d) * parseFloat(cur.server_rate)  + (acc.get(cur.record_at)?.total ?? 0)
                 }),
               new Map<
                 number,
@@ -52,6 +52,10 @@ const TrafficChart: React.FC = () => {
       ),
     [trafficLogs, tick]
   );
+
+  useEffect(() => {
+    console.log("Data Map:", dataMap);
+  }, [dataMap]);
 
   const series = useMemo<ApexAxisChartSeries>(
     () => [
@@ -118,7 +122,7 @@ const TrafficChart: React.FC = () => {
       },
       xaxis: {
         categories: Array.from(new Array(tick))
-          .map((_, i) => dayjs().subtract(i, "day").toISOString())
+          .map((_, i) => dayjs().subtract(i-1, "day").toISOString())
           .reverse(),
         labels: {
           formatter: (value: string) => dayjs(value).format("MM.DD"),
@@ -162,7 +166,7 @@ const TrafficChart: React.FC = () => {
         x: {
           formatter: (val) =>
             dayjs()
-              .subtract(tick - val, "day")
+              .subtract(tick - val-1, "day")
               .format("YYYY-MM-DD")
         },
         y: {

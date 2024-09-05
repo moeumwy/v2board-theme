@@ -132,7 +132,8 @@
       "submit": "Submit",
       "success": "Verification successful",
       "error": "Verification failed",
-      "error_null_token": "Verification token cannot be empty"
+      "error_null_token": "Verification token cannot be empty",
+      "white_email": "This email suffix registration is currently not supported"
     },
     "footer": {
       "copyright": "© {{date}} <0>MENGWU</0> All Right Reserved.",
@@ -599,6 +600,7 @@
       "sum_upload_label": "Monthly Upload",
       "sum_download_label": "Monthly Download",
       "sum_total_label": "Total this Month",
+      "sum_download_tooltip": "Actual usage of traffic without magnification calculation",
       "day_num_label": "Billing Days",
       "average_total_label": "Daily Average"
     }

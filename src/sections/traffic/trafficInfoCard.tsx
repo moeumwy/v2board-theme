@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { useGetTrafficLogsQuery } from "@/store/services/api";
 import { filesize } from "filesize";
 import { makeStyles } from "@/themes/hooks";
+import Tooltip from '@mui/material/Tooltip';
+import InfoIcon from '@mui/icons-material/Info';
 
 const TrafficInfoCard: React.FC = () => {
   const { t } = useTranslation();
@@ -16,7 +18,7 @@ const TrafficInfoCard: React.FC = () => {
       {
         key: t("traffic.info-card.sum_upload", { context: "label" }).toString(),
         value: String(
-          filesize(data?.reduce((acc, cur) => acc + cur.u / (parseInt(cur.server_rate) || 1), 0) ?? 0, {
+          filesize(data?.reduce((acc, cur) => acc + cur.u , 0) ?? 0, {
             base: 2,
             standard: "jedec",
             round: 2,
@@ -27,7 +29,7 @@ const TrafficInfoCard: React.FC = () => {
       {
         key: t("traffic.info-card.sum_download", { context: "label" }).toString(),
         value: String(
-          filesize(data?.reduce((acc, cur) => acc + cur.d / (parseInt(cur.server_rate) || 1), 0) ?? 0, {
+          filesize(data?.reduce((acc, cur) => acc + cur.d , 0) ?? 0, {
             base: 2,
             standard: "jedec",
             round: 2,
@@ -36,9 +38,16 @@ const TrafficInfoCard: React.FC = () => {
         )
       },
       {
-        key: t("traffic.info-card.sum_total", { context: "label" }).toString(),
+        key: (
+          <div>
+            {t("traffic.info-card.sum_total", { context: "label" }).toString()}
+            <Tooltip title={t("traffic.info-card.sum_download_tooltip", { context: "label" })}>
+              <InfoIcon fontSize="small" style={{ marginLeft: 4, verticalAlign: 'middle' }} />
+            </Tooltip>
+          </div>
+        ),
         value: String(
-          filesize(data?.reduce((acc, cur) => acc + (cur.u + cur.d) / (parseInt(cur.server_rate) || 1), 0) ?? 0, {
+          filesize(data?.reduce((acc, cur) => acc + (cur.u + cur.d), 0) ?? 0, {
             base: 2,
             standard: "jedec",
             round: 2,
@@ -54,7 +63,7 @@ const TrafficInfoCard: React.FC = () => {
         key: t("traffic.info-card.average_total", { context: "label" }).toString(),
         value: String(
           filesize(
-            (data ?? []).reduce((acc, cur) => acc + (cur.u + cur.d) / (parseInt(cur.server_rate) || 1), 0) /
+            (data ?? []).reduce((acc, cur) => acc + (cur.u + cur.d) , 0) /
               Math.max((data ?? []).length, 1),
             {
               base: 2,

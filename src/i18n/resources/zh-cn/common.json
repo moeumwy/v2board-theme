@@ -132,7 +132,8 @@
       "submit": "提交",
       "success": "邮件已发送，请注意查收",
       "error": "验证失败，请重试",
-      "error_null_token": "出现错误，Token 为空，请重试"
+      "error_null_token": "出现错误，Token 为空，请重试",
+      "white_email": "本站暂不支持该邮箱后缀注册"
     },
     "footer": {
       "copyright": "© {{date}} <0>萌物云</0> 版权所有",
@@ -602,6 +603,7 @@
       "sum_upload_label": "本月上传",
       "sum_download_label": "本月下载",
       "sum_total_label": "计费流量",
+      "sum_download_tooltip": "实际使用的流量，未经倍率计算",
       "day_num_label": "本月数据",
       "average_total_label": "日平均流量"
     }

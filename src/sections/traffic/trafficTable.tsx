@@ -15,6 +15,8 @@ import MainCard from "@/components/MainCard";
 import DataGrid from "@/components/@extended/DataGrid";
 import { useGetTrafficLogsQuery } from "@/store/services/api";
 import { TrafficLog } from "@/model/traffic";
+import Tooltip from '@mui/material/Tooltip';
+import InfoIcon from '@mui/icons-material/Info';
 
 const TrafficTable: React.FC = () => {
   const { t } = useTranslation();
@@ -23,6 +25,19 @@ const TrafficTable: React.FC = () => {
 
   const { data, isLoading } = useGetTrafficLogsQuery();
   const [pageSize, setPageSize] = React.useState(10);
+
+  interface CustomHeaderProps {
+    title: string;
+    description: string;
+  }
+  const CustomHeader: React.FC<CustomHeaderProps> = ({ title, description }) => (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      {title}
+      <Tooltip title={description}>
+        <InfoIcon fontSize="small" style={{ marginLeft: 4, verticalAlign: 'middle' }} />
+      </Tooltip>
+    </div>
+  );
 
   const columns = useMemo<GridColDef<TrafficLog>[]>(
     () => [
@@ -43,7 +58,7 @@ const TrafficTable: React.FC = () => {
         type: "number",
         valueGetter: (params) => {
           const serverRate = parseFloat(params.row.server_rate);
-          return params.value / serverRate;
+          return params.value ;
         },
         valueFormatter: (params) =>
           filesize(params.value as number, { base: 2, standard: "jedec", round: 2, roundingMethod: "floor" })
@@ -56,7 +71,7 @@ const TrafficTable: React.FC = () => {
         type: "number",
         valueGetter: (params) => {
           const serverRate = parseFloat(params.row.server_rate);
-          return params.value / serverRate;
+          return params.value ;
         },
         valueFormatter: (params) =>
           filesize(params.value as number, { base: 2, standard: "jedec", round: 2, roundingMethod: "floor" })
@@ -72,11 +87,20 @@ const TrafficTable: React.FC = () => {
       },
       {
         field: "total",
-        headerName: t("traffic.table.total", { context: "header" }).toString(),
+        headerName: '',
         description: t("traffic.table.total", { context: "description" }).toString(),
         width: 160,
         type: "number",
-        valueGetter: (params) => params.row.u + params.row.d,
+        renderHeader: () => (
+          <CustomHeader
+            title={t("traffic.table.total", { context: "header" }).toString()}
+            description={t("traffic.table.total", { context: "description" }).toString()}
+          />
+        ),
+        valueGetter: (params) => {
+          const serverRate = parseFloat(params.row.server_rate);
+          return (params.row.u + params.row.d) * serverRate
+        },
         valueFormatter: (params) =>
           filesize(params.value as number, { base: 2, standard: "jedec", round: 2, roundingMethod: "floor" })
       }

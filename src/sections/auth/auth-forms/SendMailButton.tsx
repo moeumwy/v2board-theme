@@ -39,7 +39,14 @@ export const SendMailWithCaptchaButton: React.FC<SendMailButtonProps> = ({ email
     }
   }, [cooldown]);
 
+  const emailSuffix = email.split("@")[1];
   const handleVerify = (token: string) => {
+    if (guestConfig?.email_whitelist_suffix && 
+      Array.isArray(guestConfig.email_whitelist_suffix) && 
+      !guestConfig.email_whitelist_suffix.includes(emailSuffix)) {
+      enqueueSnackbar(t("auth.captcha.white_email"), { variant: "error" });
+      return;
+    }
     sendEmailVerify({ email, recaptcha_data: token })
       .unwrap()
       .then(() => {
@@ -147,7 +154,15 @@ const SendMailButton: React.FC<SendMailButtonProps> = ({ email }) => {
     }
   }, [cooldown]);
 
+  const { data: guestConfig } = useGetGuestConfigQuery();
+  const emailSuffix = email.split("@")[1];
   const handleSendEmailCode = () => {
+    if (guestConfig?.email_whitelist_suffix && 
+      Array.isArray(guestConfig.email_whitelist_suffix) && 
+      !guestConfig.email_whitelist_suffix.includes(emailSuffix)) {
+      enqueueSnackbar(t("auth.captcha.white_email"), { variant: "error" });
+      return;
+    }
     console.log("send email code");
     sendMail({ email })
       .unwrap()

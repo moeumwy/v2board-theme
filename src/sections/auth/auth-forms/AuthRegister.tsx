@@ -17,9 +17,11 @@ import {
   Link,
   OutlinedInput,
   Stack,
-  Typography
+  Typography,
+  Dialog, DialogContent, DialogTitle
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import  Turnstile  from 'react-turnstile';
 
 // third party
 import * as Yup from "yup";
@@ -29,6 +31,7 @@ import OtpInput from "react18-input-otp";
 import { useSnackbar } from "notistack";
 import { useUnmountedRef } from "ahooks";
 import ReactGA from "react-ga4";
+
 
 // project import
 import IconButton from "@/components/@extended/IconButton";
@@ -48,6 +51,7 @@ import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 // ============================|| FIREBASE - REGISTER ||============================ //
 
 const AuthRegister = () => {
+  const [isShowWhiteEmail, setIsShowWhiteEmail] = useState(false);
   const theme = useTheme();
   const scriptedRef = useUnmountedRef();
   const navigate = useNavigate();
@@ -72,10 +76,14 @@ const AuthRegister = () => {
     const temp = strengthIndicator(value);
     setLevel(strengthColor(temp));
   };
-
+  
   useEffect(() => {
     handlePasswordChange("");
   }, []);
+
+  const [openTurnstile, setOpenTurnstile] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [tempValues, setTempValues] = useState<RegisterPayload | null>(null);
 
   const validationSchema = useMemo(
     () =>
@@ -105,6 +113,52 @@ const AuthRegister = () => {
     [t, siteConfig?.is_invite_force, siteConfig?.is_email_verify]
   );
 
+  const isshowwhiteemail = siteConfig?.email_whitelist_suffix!=null && siteConfig?.email_whitelist_suffix != 0;
+  const handleRegister = async (values: RegisterPayload, token: string) => {
+    try {
+      await register({
+        ...values,
+        recaptcha_data: token 
+      } as RegisterPayload)
+        .unwrap()
+        .then(() => {
+          enqueueSnackbar(t("notice::register_success"), { variant: "success" });
+          navigate("/dashboard", { replace: true });
+          ReactGA.event("register", {
+            category: "auth",
+            label: "register",
+            method: "email",
+            success: true,
+            email: values.email,
+            password_strength: level?.label,
+            invite_code: values.invite_code
+          });
+        })
+        .catch((error) => {
+          // 确保错误信息正确设置
+          if (scriptedRef.current) {
+            // 使用 Formik 的 setErrors 和 setStatus 需要通过回调传递
+            setTempValues(null); // 清空临时值
+            enqueueSnackbar(error.message, { variant: "error" });
+            ReactGA.event("register", {
+              category: "auth",
+              label: "register",
+              method: "email",
+              success: false,
+              error: error.message,
+              email: values.email,
+              values
+            });
+          }
+        });
+    } catch (err: any) {
+      console.error(err);
+      if (scriptedRef.current) {
+        setTempValues(null);
+        enqueueSnackbar(t("notice::register_failed"), { variant: "error" });
+      }
+    }
+  };
   return (
     <>
       <Formik
@@ -119,113 +173,30 @@ const AuthRegister = () => {
         }}
         validationSchema={validationSchema}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
-          // if (!values.agree) {
-          //   setStatus({ success: false });
-          //   setErrors({ submit: t("register.agree_required").toString() });
-          //   setSubmitting(false);
-          //   return;
-          // }
-
-          // try {
-          //   await register({
-          //     email: values.email,
-          //     password: values.password,
-          //     invite_code: values.invite_code,
-          //     email_code: siteConfig?.is_email_verify ? values.email_code : ""
-          //   } as RegisterPayload)
-          //     .unwrap()
-          //     .then(
-          //       () => {
-          //         setStatus({ success: true });
-          //         enqueueSnackbar(t("notice::register_success"), { variant: "success" });
-          //         navigate("/dashboard", { replace: true });
-          //         ReactGA.event("register", {
-          //           category: "auth",
-          //           label: "register",
-          //           method: "email",
-          //           success: true,
-          //           email: values.email,
-          //           password_strength: level?.label,
-          //           invite_code: values.invite_code
-          //         });
-          //       },
-          //       (error) => {
-          //         setStatus({ success: false });
-          //         setErrors(lo.isEmpty(error.errors) ? { submit: error.message } : error.errors);
-          //         ReactGA.event("register", {
-          //           category: "auth",
-          //           label: "register",
-          //           method: "email",
-          //           success: false,
-          //           error: error.message,
-          //           email: values.email,
-          //           values
-          //         });
-          //       }
-          //     );
-          // } catch (err: any) {
-          //   console.error(err);
-          //   if (scriptedRef.current) {
-          //     setStatus({ success: false });
-          //     setErrors(lo.isEmpty(err.errors) ? { submit: err.message } : err.errors);
-          //   }
-          // } finally {
-          //   setSubmitting(false);
-          // }
           if (!values.agree) {
             setStatus({ success: false });
             setErrors({ submit: t("register.agree_required").toString() });
             setSubmitting(false);
             return;
           }
-
-          try {
-            await register({
+          if (siteConfig?.is_recaptcha === 1) {
+            // 存储表单值并打开 Turnstile 对话框
+            setTempValues({
               email: values.email,
               password: values.password,
               invite_code: values.invite_code,
               email_code: siteConfig?.is_email_verify ? values.email_code : ""
-            } as RegisterPayload)
-              .unwrap()
-              .then(
-                () => {
-                  setStatus({ success: true });
-                  enqueueSnackbar(t("notice::register_success"), { variant: "success" });
-                  navigate("/dashboard", { replace: true });
-                  ReactGA.event("register", {
-                    category: "auth",
-                    label: "register",
-                    method: "email",
-                    success: true,
-                    email: values.email,
-                    password_strength: level?.label,
-                    invite_code: values.invite_code
-                  });
-                },
-                (error) => {
-                  setStatus({ success: false });
-                  // Ensure errors are properly set for fields as well as the global error
-                  setErrors(lo.isEmpty(error.errors) ? { submit: error.message } : error.errors);
-                  enqueueSnackbar(error.message, { variant: "error" }); // Show API error message at the top
-                  ReactGA.event("register", {
-                    category: "auth",
-                    label: "register",
-                    method: "email",
-                    success: false,
-                    error: error.message,
-                    email: values.email,
-                    values
-                  });
-                }
-              );
-          } catch (err: any) {
-            console.error(err);
-            if (scriptedRef.current) {
-              setStatus({ success: false });
-              setErrors(lo.isEmpty(err.errors) ? { submit: err.message } : err.errors);
-              enqueueSnackbar(t("notice::register_failed"), { variant: "error" }); // Show a general error message at the top
-            }
-          } finally {
+            });
+            setOpenTurnstile(true);
+            setSubmitting(false); // 阻止表单继续提交
+          } else {
+            // 不需要 Turnstile，直接注册
+            handleRegister({
+              email: values.email,
+              password: values.password,
+              invite_code: values.invite_code,
+              email_code: siteConfig?.is_email_verify ? values.email_code : ""
+            }, '');
             setSubmitting(false);
           }
         }}
@@ -254,6 +225,11 @@ const AuthRegister = () => {
                       siteConfig?.is_email_verify === 1 ? <SendMailButton email={values.email} /> : undefined
                     }
                   />
+                  {isshowwhiteemail && (
+                    <FormHelperText error id="helper-text-email-signup">
+                          仅支持{Array.isArray(siteConfig?.email_whitelist_suffix) ? siteConfig.email_whitelist_suffix.join(", ") : siteConfig?.email_whitelist_suffix}注册
+                  </FormHelperText>
+                  )}
                   {touched.email && errors.email && (
                     <FormHelperText error id="helper-text-email-signup">
                       {errors.email}
@@ -472,6 +448,30 @@ const AuthRegister = () => {
           </Box>
         )}
       </Formik>
+      {siteConfig?.is_recaptcha === 1 && (
+        <Dialog open={openTurnstile} onClose={() => setOpenTurnstile(false)}>
+          <DialogTitle>
+            <Trans i18nKey={"auth.captcha.title"}>Captcha</Trans>
+          </DialogTitle>
+          <DialogContent>
+            <Turnstile
+              sitekey={siteConfig?.recaptcha_site_key!}
+              onVerify={(token) => {
+                setTurnstileToken(token);
+                setOpenTurnstile(false);
+                if (tempValues) {
+                  handleRegister(tempValues, token);
+                  setTempValues(null);
+                }
+              }}
+              onError={() => {
+                enqueueSnackbar(t("auth.captcha.error"), { variant: "error" });
+                setOpenTurnstile(false);
+              }}
+            />
+          </DialogContent>
+        </Dialog>
+      )}
     </>
   );
 };

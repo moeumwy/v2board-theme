@@ -153,7 +153,8 @@
       "description": "您的订阅信息",
       "plan": "计划",
       "expire_forever": "此订阅长期有效",
-      "expire_limited_zero": "此订阅已或即将到期，请及时续费",
+      "expire_limited_zero": "此订阅将于24小时内到期，请及时续费",
+      "expire_is": "此订阅已到期，请续费后使用",
       "expire_limited_other": "于 {{date}} 到期，距离到期还有 {{count}} 天，将于 {{reset_date}} 天后重置流量",
       "traffic": "已用流量 {{used}} GB / 总计流量 {{total}} GB",
       "no-subscription": "您还没有订阅"

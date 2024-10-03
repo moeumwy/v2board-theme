@@ -30,9 +30,22 @@ const SubscriptionCard: React.FC = () => {
           <Typography component={"h6"} variant={"h4"}>
             {subscriptionInfo.plan!.name}
           </Typography>
-          <Typography variant={"body1"}>
+          <Typography
+            variant={"body1"}
+            style={{
+              color: subscriptionInfo.expired_at === null 
+                ? 'inherit' 
+                : (subscriptionInfo.expired_at < dayjs().unix() 
+                    ? 'red' // context 为 "is" 时
+                    : (subscriptionInfo.expired_at > dayjs().unix() && 
+                       Math.max(dayjs.unix(subscriptionInfo.expired_at).diff(dayjs(), "day"), 0) < 1 
+                       ? 'orange' // context 为 "limited" 时
+                       : 'inherit')) // 其他情况
+            }}>
             {t("dashboard.subscription-card.expire", {
-              context: subscriptionInfo.expired_at === null ? "forever" : "limited",
+              context: subscriptionInfo.expired_at === null
+                ? "forever"
+                : (subscriptionInfo.expired_at < dayjs().unix() ? "is" : "limited"),
               date: dayjs.unix(subscriptionInfo.expired_at || 0).format("YYYY/MM/DD"),
               reset_date: subscriptionInfo.reset_day,
               count:

@@ -153,7 +153,8 @@
       "description": "您的訂閱信息",
       "plan": "計劃",
       "expire_forever": "此訂閱長期有效",
-      "expire_limited_zero": "此訂閱已或即將到期，請及時續費",
+      "expire_limited_zero": "此訂閱將於24小時內到期，請及時續費",
+      "expire_is": "此訂閱已到期，請續費後使用",
       "expire_limited_other": "於 {{date}} 到期，距離到期還有 {{count}} 天，將於 {{reset_date}} 天後重置流量",
       "traffic": "已用流量 {{used}} GB / 總計流量 {{total}} GB",
       "no-subscription": "您還沒有訂閱"

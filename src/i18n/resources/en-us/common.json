@@ -153,7 +153,8 @@
       "description": "You can view the subscription information here",
       "plan": "Plan",
       "expire_forever": "Never Expire",
-      "expire_limited_zero": "Expired/Expired Soon",
+      "expire_limited_zero": "This subscription will expire within 24 hours, please renew it promptly",
+      "expire_is": "This subscription has expired, please renew and use it",
       "expire_limited_other": "Expired on {{date}}, {{count}} days until expiration, will reset traffic in {{reset_date}} days",
       "traffic": "Used {{used}} GB / Total {{total}} GB",
       "no-subscription": "No subscription"

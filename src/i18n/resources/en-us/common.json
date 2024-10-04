@@ -318,6 +318,7 @@
         "order-status-value_pending": "pending",
         "order-status-value_paid": "paid",
         "order-status-value_cancelled": "cancelled",
+        "order-status-value_finished": "finished",
         "order-amount": "Order amount",
         "price": "{{value}} CNY",
         "coupon-amount": "Discounted price",

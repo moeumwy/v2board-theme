@@ -117,7 +117,10 @@ const OrderInfoCard: React.FC = () => {
     status
   } = useCheckoutContext();
 
-  const statusContext = useMemo(() => {
+  const lines = useMemo<LineProps[]>(() => {
+    if (isLoading) return [];
+
+  const statusContext = (() => {
     switch (status) {
       case OrderStatus.FINISHED:
         return "finished";
@@ -130,10 +133,9 @@ const OrderInfoCard: React.FC = () => {
       default:
         return "cancelled";
     }
-  }, [status]);
+  })();
 
-  const lines = useMemo<LineProps[]>(
-    () => [
+  return [
       {
         label: t("order.checkout.order-info-card.order-number"),
         value: data?.trade_no
@@ -143,10 +145,6 @@ const OrderInfoCard: React.FC = () => {
         value: dayjs.unix(data?.created_at || 0).format("YYYY-MM-DD HH:mm:ss")
       },
       {
-        // label: t("order.checkout.order-info-card.order-status"),
-        // value: t("order.checkout.order-info-card.order-status-value", {
-        //   context: statusContext
-        // })
         label: t("order.checkout.order-info-card.order-status"),
         value: t(`order.checkout.order-info-card.order-status-value_${statusContext}`)
       },
@@ -176,9 +174,12 @@ const OrderInfoCard: React.FC = () => {
           value: (Number(data?.total_amount || 0) / 100).toFixed(2)
         })
       }
-    ],
-    [data, t]
-  );
+    ];
+  }, [data, isLoading, status, t]);
+
+  if (isLoading) {
+    return <Skeleton variant="rectangular" height={200} />;
+  }
 
   return (
     <MainCard

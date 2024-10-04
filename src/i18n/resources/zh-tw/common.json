@@ -317,6 +317,7 @@
         "order-status-value_pending": "待支付",
         "order-status-value_paid": "已支付",
         "order-status-value_cancelled": "已取消",
+        "order-status-value_finished": "已完成",
         "order-amount": "訂單金額",
         "price": "{{value}} CNY",
         "coupon-amount": "優惠金額",

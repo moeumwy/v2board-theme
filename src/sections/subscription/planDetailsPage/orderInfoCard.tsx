@@ -94,8 +94,8 @@ const OrderInfoCard: React.FC = () => {
           <Stack direction={"row"} justifyContent={"space-between"} spacing={1}>
             <Typography variant={"body1"}>{planData?.name}</Typography>
             <Typography variant={"body1"}>
-              {t("subscription.plan.order-info-card.price", {
-                price: Number(originPrice).toFixed(2)
+            {t("subscription.plan.order-info-card.price", {
+                price: originPrice >= 0 ? Number(originPrice).toFixed(2) : "0.00"
               })}
             </Typography>
           </Stack>
@@ -119,8 +119,8 @@ const OrderInfoCard: React.FC = () => {
         <Stack direction={"column"} spacing={2}>
           <Typography variant={"subtitle1"}>{t("subscription.plan.order-info-card.total")}</Typography>
           <Typography variant={"h2"} component={"span"}>
-            {t("subscription.plan.order-info-card.price", {
-              price: Number(price).toFixed(2)
+          {t("subscription.plan.order-info-card.price", {
+              price: price >= 0 ? Number(price).toFixed(2) : "0.00"
             })}
           </Typography>
           <Button fullWidth variant={"contained"} color={"primary"} onClick={handleClick} disabled={isSubmitting}>

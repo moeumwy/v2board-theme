@@ -20,6 +20,9 @@ import Plan from "@/model/plan";
 import { PaymentPeriod, PlanType } from "@/types/plan";
 import { getFirstPayment, getMode, getPrice } from "@/utils/plan";
 
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 const ProductCardSkeleton: React.FC = () => (
   <MainCard title={<Skeleton variant={"text"} width={200} />}>
     <Skeleton variant={"rectangular"} width={"100%"} height={100} />
@@ -59,6 +62,26 @@ const ProductCard: React.FC<{
     };
   }, []);
 
+  const renderFeatures = useMemo(() => {
+    try {
+      const content = JSON.parse(product.content); // 假设 product.content 是 JSON 字符串
+      return content.map((item: { feature: string; support: boolean }, index: number) => (
+        <Stack direction="row" alignItems="center" spacing={1} key={index}>
+          {item.support ? (
+            <CheckCircleIcon color="success" />
+          ) : (
+            <CancelIcon color="error" />
+          )}
+          <Typography variant="body2" color="textPrimary">
+            {item.feature}
+          </Typography>
+        </Stack>
+      ));
+    } catch (e) {
+      return (<MuiMarkdown>{product.content}</MuiMarkdown>);
+    }
+  }, [product.content]);
+
   return (
     <MainCard
       title={product.name}
@@ -75,7 +98,7 @@ const ProductCard: React.FC<{
         <Typography variant={"h3"} component={"h2"} color={"textPrimary"}>
           {"￥ " + lo.ceil(price.price / 100, 2).toFixed(2)}
         </Typography>
-        <MuiMarkdown>{product.content}</MuiMarkdown>
+        <div>{renderFeatures}</div>
         <Button
           variant={"contained"}
           color={"primary"}
@@ -102,26 +125,6 @@ const Products: React.FC = () => {
         ?.filter((datum) => datum.show === 1)
         .filter((datum) => datum.name.includes(keyword) || datum.content.includes(keyword))
         .filter((datum) => {
-          // if (planType.has(PlanType.PERIOD)) {
-          //   if (
-          //     lo.isNumber(
-          //       datum.month_price ||
-          //         datum.year_price ||
-          //         datum.quarter_price ||
-          //         datum.half_year_price ||
-          //         datum.two_year_price ||
-          //         datum.three_year_price
-          //     )
-          //   ) {
-          //     return true;
-          //   }
-          // }
-
-          // if (planType.has(PlanType.TRAFFIC)) {
-          //   if (lo.isNumber(datum.onetime_price)) {
-          //     return true;
-          //   }
-          // }
           if (planType.has(PlanType.PERIOD) || planType.has(PlanType.TRAFFIC)) {
             const hasPeriodPrice = lo.isNumber(datum.month_price) || lo.isNumber(datum.year_price) ||
                                   lo.isNumber(datum.quarter_price) || lo.isNumber(datum.half_year_price) ||

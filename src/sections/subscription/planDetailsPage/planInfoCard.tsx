@@ -9,11 +9,23 @@ import MuiMarkdown from "mui-markdown";
 import MainCard from "@/components/MainCard";
 import { usePlanDetailContext } from "@/sections/subscription/planDetailsPage/context";
 
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 const PlanInfoCard: React.FC = () => {
   const { t } = useTranslation();
   const {
     planQuery: { data, isLoading }
   } = usePlanDetailContext();
+
+  const parsedContent = React.useMemo(() => {
+    try {
+      console.log("datacontent:",data?.content);
+      return JSON.parse(data?.content || '{}');
+    } catch (error) {
+      return null;
+    }
+  }, [data?.content]);
 
   return (
     <MainCard
@@ -22,10 +34,25 @@ const PlanInfoCard: React.FC = () => {
       })}
       content={false}
     >
-      {data && (
-        <Typography variant={"body1"} paragraph component={"div"}>
-          <MuiMarkdown>{data.content}</MuiMarkdown>
-        </Typography>
+      {!isLoading && data && (
+        <div>
+          {Array.isArray(parsedContent) ? (
+            parsedContent.map((item: { feature: string; support: boolean }, index: number) => (
+              <Typography key={index} variant="body1" paragraph component="div" display="flex" alignItems="center">
+                {item.support ? (
+                  <CheckCircleIcon color="success" style={{ marginRight: 8 }} />
+                ) : (
+                  <CancelIcon color="error" style={{ marginRight: 8 }} />
+                )}
+                {item.feature}
+              </Typography>
+            ))
+          ) : (
+            <Typography variant={"body1"} paragraph component={"div"}>
+              <MuiMarkdown>{data.content}</MuiMarkdown>
+            </Typography>
+          )}
+        </div>
       )}
       {isLoading && (
         <Stack p={2} spacing={1}>

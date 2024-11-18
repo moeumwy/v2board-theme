@@ -49,7 +49,7 @@ const Table: React.FC = () => {
         description: t("order.list.table.plan_name", { context: "description" }).toString(),
         width: 120,
         type: "string",
-        valueGetter: (params) => params.row.plan.name
+        valueGetter: (params) => params.row.plan?.name || t("order.checkout.product-info-card.deposit").toString()
       },
       {
         field: "total_amount",

@@ -297,7 +297,8 @@
         "traffic_limited": "{{count}} GB",
         "traffic_unlimited": "不限",
         "product-price": "价格",
-        "next-billing-date": "下次续费"
+        "next-billing-date": "下次续费",
+        "deposit": "余额充值"
       },
       "status-card": {
         "status_pending": "待支付",
@@ -358,7 +359,7 @@
         "status-value_finished": "已完成",
         "period_header": "服务周期",
         "period_description": "服务周期是您服务的有效期。",
-        "period-value": "undefined",
+        "period-value": "无",
         "period-value_onetime_price": "一次性付款",
         "period-value_month_price": "月付",
         "period-value_quarter_price": "季付",
@@ -366,6 +367,7 @@
         "period-value_year_price": "年付",
         "period-value_two_year_price": "两年付",
         "period-value_three_year_price": "三年付",
+        "period-value_none": "无",
         "created_at_header": "创建时间",
         "created_at_description": "创建时间是订单在系统中生成的时间。",
         "action_header": "操作",
@@ -480,7 +482,15 @@
         "balance_value": "{{value}} CNY",
         "commission_balance_key": "推广佣金",
         "commission_balance_value": "{{value}} CNY"
-      }
+      },
+      "button": "充值",
+      "recharge-dialog": {
+        "title": "余额充值",
+        "amount-label": "充值金额",
+        "cancel": "取消",
+        "confirm": "确定"
+      },
+      "auto-renew": "自动续费"
     },
     "change-password-card": {
       "title": "修改密码",

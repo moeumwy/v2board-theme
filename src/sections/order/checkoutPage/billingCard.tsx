@@ -33,20 +33,22 @@ const BillingCard: React.FC = () => {
   >(
     () => [
       {
-        label: detailData?.plan.name,
+        label: detailData?.plan.name === "deposit"
+          ? t("order.checkout.product-info-card.deposit")
+          : detailData?.plan.name,
         value: t("order.checkout.billing-card.price", {
-          value: Number((detailData?.plan[detailData?.period] ?? 0) / 100).toFixed(2)
+          value: Number((detailData?.total_amount ?? 0) / 100).toFixed(2)
         })
       },
       ...(detailData?.discount_amount || detailData?.surplus_amount
         ? [
-            {
-              label: t("order.checkout.billing-card.deduction"),
-              value: t("order.checkout.billing-card.price", {
-                value: (((detailData?.discount_amount ?? 0) + (detailData?.surplus_amount ?? 0)) / -100).toFixed(2)
-              })
-            }
-          ]
+          {
+            label: t("order.checkout.billing-card.deduction"),
+            value: t("order.checkout.billing-card.price", {
+              value: (((detailData?.discount_amount ?? 0) + (detailData?.surplus_amount ?? 0)) / -100).toFixed(2)
+            })
+          }
+        ]
         : []),
       {
         label: t("order.checkout.billing-card.total-price"),

@@ -47,13 +47,17 @@ const ProductInfoCard: React.FC = () => {
     () => [
       {
         label: t("order.checkout.product-info-card.product-name"),
-        value: data?.plan.name
+        value: data?.plan.name === "deposit" 
+        ? t("order.checkout.product-info-card.deposit") 
+        : data?.plan.name
       },
       {
         label: t("order.checkout.product-info-card.product-type"),
-        value: t("order.checkout.product-info-card.product-period", {
-          context: data?.period
-        })
+        value: data?.plan.name === "deposit"
+        ? t("order.checkout.product-info-card.deposit")
+        : t("order.checkout.product-info-card.product-period", {
+            context: data?.period
+          })
       },
       {
         label: t("order.checkout.product-info-card.traffic"),
